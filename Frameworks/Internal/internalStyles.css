@@ -1,0 +1,19 @@
+@media screen {
+    .form-check-label {
+        font-weight: bold;
+    }
+}
+
+@media print {
+    .form-check-label {
+        font-weight: 0;
+    }
+
+    hr {
+        border-top: 1px solid #000;
+    }
+
+    .col-12 p {
+        display: none;
+    }
+}
