@@ -16,21 +16,30 @@
     <nav aria-label="breadcrumb" class="m-3">
       <ol class="breadcrumb">
         <a href="../index.html" class="breadcrumb-item">Home</a>
-        <li class="breadcrumb-item">Section Information</a>
-        <li class="breadcrumb-item active" aria-current="page">Part Information</li>
+        <li class="breadcrumb-item">I. General Requirements</a>
+        <li class="breadcrumb-item active" aria-current="page">Part 1: Pre-Draw Requirements</li>
       </ol>
     </nav>
   </div>
   <div class="container-md">
-    <div class="row justify-content-start justify-content-md-end">
+    <div class="row justify-content-start justify-content-md-between">
+      <div class="col-6 col-md-4 align-middle">
+        <p class="mb-0 pb-1"><strong>User: </strong><span id="currentUser"></span> <button onclick="changeUsername()"
+            class="btn btn-primary btn-sm d-print-none">Not you?</button></p>
+      </div>
       <div class="col-6 col-md-4">
-        <div class="input-group">
-          <div class="input-group-text d-block d-print-none">Project Number</div>
-          <div class="input-group-text d-none d-print-block">Project</div>
-          <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="No Job Number">
+        <div class="d-none d-print-block">
+          <p class="mb-0 pb-1 align-middle"><strong>Job: </strong><span id="currentJob"></span></p>
+        </div>
+        <div class="d-print-none">
+          <div class="input-group">
+            <div class="input-group-text">Project Number</div>
+            <input type="text" class="form-control" id="jobInput" placeholder="No Job Number">
+          </div>
         </div>
       </div>
     </div>
+    <hr>
     <h3>A. Modelspace Requirements</h3>
     <div class="row">
       <div class="col-6 col-lg-12 mb-2">
