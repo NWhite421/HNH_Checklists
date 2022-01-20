@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../hnh_icon_color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <title>Boundary &amp; Topo Survey - General - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <div class="container-fluid bg-light mb-4 d-print-none">
+    <div class="row" class="p-3">
+      <div class="col-12 col-md-8">
+        <nav aria-label="breadcrumb" class="mt-3">
+          <ol class="breadcrumb">
+            <a href="../index.html" class="breadcrumb-item">Home</a>
+            <li class="breadcrumb-item">I. General Requirements</a>
+            <li class="breadcrumb-item active" aria-current="page">Part 2. Boundary &amp; Topographic Survey</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-12 col-md-4 d-inline text-center mt-3">
+        <a href="PreDraw.html" target="_blank">&#8592; Part 1: Pre-Draw</a> | <a href="#" target="_blank"
+          class="link-danger">Part 3: Site Plan &#8594;</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-md">
+    <div class="row justify-content-start justify-content-md-between">
+      <div class="col-12 d-none d-print-block text-center">
+        <h4>Boundary &amp; Topographic Survey Checklist</h4>
+      </div>
+      <div class="col-6 col-md-4 align-middle">
+        <p class="mb-0 pb-1"><strong>User: </strong><span id="currentUser"></span> <button onclick="changeUsername()"
+            class="btn btn-primary btn-sm d-print-none">Not you?</button></p>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="d-none d-print-block">
+          <p class="mb-0 pb-1 align-middle"><strong>Job: </strong><span id="currentJob"></span></p>
+        </div>
+        <div class="d-print-none">
+          <div class="input-group">
+            <div class="input-group-text">Project Number</div>
+            <input type="text" class="form-control" id="jobInput" placeholder="No Job Number">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h3>A. Modelspace Requirements</h3>
+    <div class="row">
+      <div class="col-6 col-lg-12 mb-2">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Import Field Data</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Import the field data in <q>PNEZD (comma-delinted)</q> point format. Verify that the
+          points are in the correct location either by using the Geolocaton feature or verifying against known points.
+        </p>
+      </div>
+      <div class="col-6 col-lg-12 mb-2">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. <q>UPDATEALLPOINTGROUPS</q>
+          AutoCAD command ran.</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Run the <q>UPDATEALLPOINTGROUPS</q> command to ensure that the Civil 3D point groups
+          display points as required.</p>
+      </div>
+    </div>
+    <h3>B. Boundary Survey Requirements</h3>
+    <div class="row">
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Basis of Bearing
+          Determined</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Determine the basis of bearing. Move the linework onto the points and rotate to your
+          bearing basis. See <a href="../guides/BasisBearing.html">this article</a> for help with this process.</p>
+        <span class="alert alert-danger py-2 d-print-none" role="alert"><strong>Do not move points under any
+            circumstance.</strong> Move the linework onto the points.</span>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Depiction of Basis of
+          Bearing</label>
+        <hr class="my-1 d-print-none">
+        <p class="mb-1 d-print-none">Using the appropriate layers, breaklines, and crows feet, depict the location of
+          the second point for the basis of bearing. Annotate the second point in accordance with <a
+            href="#sectionb3">section (B)(3)</a> of this part.</p>
+      </div>
+      <div class="col-12 mb-2" id="sectionb3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Annotate Boundary And
+          Corners</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Add measured bearings and distances to boundary segment labels (use plat bearings and
+          rotation). Add appropriate blocks to corners and add descriptions.</p>
+        <div class="row d-print-none">
+          <div class="col-12 col-md-4 text-center mb-2">
+            <img src="../resources/images/homebuilder_iron_rod_64_64.png" alt="iron rod symbol" height="32" />
+            <p class="my-0"><strong>Block Name:</strong> Iron Rod</p>
+            <p class="my-0"><strong>Use:</strong> Soft ground</p>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-2">
+            <img src="../resources/images/homebuilder_nail_disk_64_64.png" alt="nail and disk symbol" height="32" />
+            <p class="my-0"><strong>Block Name:</strong> Nail &amp; Disk</p>
+            <p class="my-0"><strong>Use:</strong> Hard Surfaces</p>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-2">
+            <img src="../resources/images/homebuilder_cmon_64_64.png" alt="concrete monument symbol" height="32" />
+            <p class="my-0"><strong>Block Name:</strong> C Monument</p>
+            <p class="my-0"><strong>Use:</strong> Special circumstances</p>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-2">
+            <h5 class="my-0">Line Annotations</h5>
+            <p class="my-0">Regular Line</p>
+            <h6 class="text-muted my-0">N00&deg;15'26"W(P) 125.00'(P)</h6>
+            <h6 class="text-muted my-0">N00&deg;15'29"W(M) 124.89'(M)</h6>
+            <p class="mt-2 mb-0">Basis of Bearing Line</p>
+            <h6 class="text-muted my-0">N00&deg;15'26"W(P) 125.00'(P)</h6>
+            <h6 class="text-muted my-0">BASIS OF BEARING 124.89'(M)</h6>
+            <p class="mt-2 mb-0">Matching Information</p>
+            <h6 class="text-muted my-0">N00&deg;15'26"W(P&amp;M) 125.00'(P&amp;M)</h6>
+            <p class="mt-2 mb-0 alert-warning">Always have plat information over measured information</p>
+          </div>
+          <div class="col-12 col-md-4 text-center mb-2">
+            <h5 class="my-0">Curve Annotations</h5>
+            <p class="my-0">Regular Curve</p>
+            <h6 class="text-muted my-0">L: 73.50' [plat arc length]</h6>
+            <h6 class="text-muted my-0">R: 34.49' [plat radius]</h6>
+            <h6 class="text-muted my-0">D: 122&deg;05'52" [plat delta angle]</h6>
+            <h6 class="text-muted my-0">CH. B: N52&deg;44'50"E [plat and measured per line annotations]</h6>
+            <h6 class="text-muted my-0">CH. D: 60.36' [plat and measured per line annotations]</h6>
+          </div>
+          <div class="col-12 col-md-4 mb-2">
+            <h5 class="my-0">Acceptable abbreviations</h5>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">FND</dt>
+              <dd class="col-sm-10 my-0 py-0">Found</dd>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">SET</dt>
+              <dd class="col-sm-10 my-0 py-0">Set (assumed ID is &quot;LB7821&quot;)</dd>
+            </dl>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">IR</dt>
+              <dd class="col-sm-10 my-0 py-0">Iron Rod</dd>
+            </dl>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">IRC</dt>
+              <dd class="col-sm-10 my-0 py-0">Iron Rod &amp; Cap</dd>
+            </dl>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">NL</dt>
+              <dd class="col-sm-10 my-0 py-0">Nail</dd>
+            </dl>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">NLD</dt>
+              <dd class="col-sm-10 my-0 py-0">Nail &amp; Disk</dd>
+            </dl>
+            </dl>
+            <dl class="row my-0 py-0">
+              <dt class="col-sm-2 my-0 py-0">CMON</dt>
+              <dd class="col-sm-10 my-0 py-0">Concrete Monument</dd>
+            </dl>
+            <p class="mt-2 mb-0 alert-warning text-center">Verify this information against the Surveyor's Legend of the
+              drawing</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Adjacent Lot
+          Information</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Update the adjacent lot information per <a href="PreDraw.html#sectiona5"
+            target="_blank">Part 1. Pre-Draw (A)(5)</a> standards.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. Site Benchmark(s)</label>
+        <hr class="my-1 d-print-none">
+        <p class="mb-1 d-print-none">Annotate benchmark information by defining if the benchmark was found or set, a
+          short description, and elevation.</p>
+        <p class="my-0 ms-5 text-muted d-print-none">FND NL IN PP<br>EL: 82.41'</p>
+      </div>
+    </div>
+    <h3>C. Topographic Survey Requirements</h3>
+    <div class="row">
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 6. Topography</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Verify your ground shots, edge of pavement shots, and centerline shots. If required by
+          the municipality, download, insert, and verify a lidar is within tolerance of our data. When in doubt, use our
+          data.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 7. Linework</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Draft any linework that is required, including but not limited to the edge of pavement,
+          sidewalks, and fence lines.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 8. Encroachments</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">If there are any encroachments onto our property, draw it, annotate a distance from the
+          point or furthest point on the polygon to the boundary. Inform the PSM in either the comment section or
+          in-person about the encroachment.</p>
+        <p class="d-print-none"><strong>EXCEPTION: </strong>Utility items such as meters, guy anchors, fences, and
+          risers do not qualify as encroachments</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 9. (Optional) Trees</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">If required by the municipality, show tree locations using the appropriate block and
+          noting the size and type next to the block.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 10. Flood Zone Line(s)</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">If the property lies within two (2) or more flood zones, depict the line(s) and annotate
+          both sides of each line.</p>
+      </div>
+    </div>
+    <h3>D. Paperspace Requirements</h3>
+    <div class="row">
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 11. Viewport</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Unlock the viewport and change the view to be centered on the subject property and
+          surrounding information. Choose a scale that best fits the lot and information, preferring being closer to a
+          1&quot; = 1&apos; scale. Ensure no text, symbols, or other relevatant data is cut or outside of the viewport.
+          Change the scale in the top-right of the template to match your viewport scale by using the selection
+          attribute
+          (downwards triangle).</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 12. Survey Title</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">To the left of the company logo on the template, take the &quot;BOUNDARY SURVEY&quot;
+          text
+          object and place it under the logo and horizontally centered under the logo. If the topographic survey section
+          was performed, change the text to read &quot;BOUNDARY &amp; TOPOGRAPHIC SURVEY&quot;.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 13. Surveyor's Notes</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Fill out Surveyor's Note 2 (orange section) with the date of the field data.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-3">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 14. Look Over</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Perform a 30 second look over of all the information, including items you may not have
+          changed.</p>
+      </div>
+    </div>
+
+    <div class="d-print-none">
+      <div class="accordion mb-2" id="sampleAccordian">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="sampleBoundaryTopo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSampleBoundaryTopo" aria-expanded="false"
+              aria-controls="collapseSampleBoundaryTopo">
+              Sample Site Plan
+            </button>
+          </h2>
+          <div id="collapseSampleBoundaryTopo" class="accordion-collapse collapse pb-3"
+            aria-labelledby="sampleBoundaryTopo" data-bs-parent="#sampleAccordian">
+            <div class="accordion-body" style="height: auto;">
+              <!--embed type="application/pdf" class="w-100 h-100 pb-2" src="references/palm coast/Site Plan Example.pdf">
+              <a href="references/palm coast/Site Plan Example.pdf" target="_blank" class="link-danger">Having issues,
+                view PDF in a new tab.</a-->
+              <img src="../resources/images/nothing-found.png">
+              <h5>We don't have anything.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="commentSectionEditArea" class="d-print-none">
+      <h5>Comments</h5>
+      <div class="row mb-2">
+        <div class="col-12">
+          <textarea class="form-control" rows="4" id="commentSectionText"></textarea>
+        </div>
+        <div class="col-12 d-print-none">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="includeCommentSection">
+            <label class="form-check-label" for="includeCommentSection">Include comment section on print</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4">
+        <div class="d-flex">
+          <button type="button" class="btn btn-primary d-print-none me-2" onclick="uncheckAll()">Clear Form</button>
+          <button type="button" class="btn btn-primary d-print-none" onclick="window.print()">Print Form</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="commentSection" class="d-none">
+      <hr>
+      <h6>Comments</h6>
+      <div id="commentContent"></div>
+    </div>
+
+
+    <div class="d-none d-print-block">
+      <p><br>[End of document]</p>
+    </div>
+  </div>
+
+</body>
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="mt-auto pt-1 d-none d-print-block text-center">
+    <p id="timestamp" class="my-0 py-0">Timestamp goes here.</p>
+    <span class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+  </div>
+  <div class="container d-print-none">
+    <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+  </div>
+</footer>
