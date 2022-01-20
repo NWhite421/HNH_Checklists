@@ -14,7 +14,7 @@ Copyright (c) 2022 Your Company
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
-  <link href="../H&H - Color.png" rel="icon">
+  <link href="../hnh_icon_color.png" rel="icon">
   <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
   <script src="../Frameworks/Internal/internalScripts.js"></script>
   <title>I(B) - Boundary &amp; Topo Survey - H &amp; H Survey Consultants LLC</title>
@@ -42,6 +42,16 @@ Copyright (c) 2022 Your Company
     </div>
     <h3>A. Modelspace Requirements</h3>
     <div class="row">
+      <div class="col-6 col-lg-12 mb-2">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Import Field Data</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Import the field data in <q>PNEZD (comma-delinted)</q> point format. Verify that the points are in the correct location either by using the Geolocation feature or verifying against known points. See <a href="../guides/BasisBearing.html">this article</a> for help with this process.</p>
+      </div>
+      <div class="col-6 col-lg-12 mb-2">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. <q>UPDATEALLPOINTGROUPS</q> AutoCAD command ran.</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">Run the <q>UPDATEALLPOINTGROUPS</q> command to ensure that the Civil 3D point groups display points as required.</p>
+      </div>
     </div>
     <h3>B. Boundary Survey Requirements</h3>
     <div class="row">
