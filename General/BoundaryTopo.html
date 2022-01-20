@@ -1,0 +1,107 @@
+<!--
+Filename: c:\Projects\HNH_Checklists\general\checklist.html
+Path: c:\Projects\HNH_Checklists\general
+Created Date: Wednesday, January 19th 2022, 6:14:55 pm
+Author: Nathan (ThatFloridaMan)
+
+Copyright (c) 2022 Your Company
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../H&H - Color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <title>I(B) - Boundary &amp; Topo Survey - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <div class="container-fluid bg-light mb-4 d-print-none">
+    <nav aria-label="breadcrumb" class="m-3">
+      <ol class="breadcrumb">
+        <a href="../index.html" class="breadcrumb-item">Home</a>
+        <li class="breadcrumb-item">I. General Requirements</a>
+        <li class="breadcrumb-item active" aria-current="page">Part 2. Boundary &amp; Topographic Survey</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-md">
+    <div class="row justify-content-start justify-content-md-end">
+      <div class="col-6 col-md-4">
+        <div class="input-group">
+          <div class="input-group-text d-block d-print-none">Project Number</div>
+          <div class="input-group-text d-none d-print-block">Project</div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="No Job Number">
+        </div>
+      </div>
+    </div>
+    <h3>A. Modelspace Requirements</h3>
+    <div class="row">
+    </div>
+    <h3>B. Boundary Survey Requirements</h3>
+    <div class="row">
+      <div class="col-6 col-lg-12 mb-2">
+        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Legal Description
+          Harmony</label>
+        <hr class="my-1 d-print-none">
+        <p class="d-print-none">The legal description matches between the property card, deed, and plat. The aerial
+          appears to match the legal description.</p>
+      </div>
+    </div>
+    <h3>C. Topographic Survey Requirements</h3>
+    <div class="row">
+    </div>
+    <h3>D. Paperspace Requirements</h3>
+    <div class="row">
+    </div>
+
+    <div id="commentSection" class="d-none">
+      <hr>
+      <h6>Comments</h6>
+      <div id="commentContent"></div>
+    </div>
+
+    <div class="d-none d-print-block">
+      <p><br>[End of document]</p>
+    </div>
+
+    <div id="commentSectionEditArea" class="d-print-none">
+      <h5>Comments</h5>
+      <div class="row mb-2">
+        <div class="col-12">
+          <textarea class="form-control" rows="4" id="commentSectionText"></textarea>
+        </div>
+        <div class="col-12 d-print-none">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="includeCommentSection">
+            <label class="form-check-label" for="includeCommentSection">Include comment section on print</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4">
+        <div class="d-flex">
+          <button type="button" class="btn btn-primary d-print-none me-2" onclick="uncheckAll()">Clear Form</button>
+          <button type="button" class="btn btn-primary d-print-none" onclick="window.print()">Print Form</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-auto pt-1 d-none d-print-block">
+    <p id="timestamp" class="my-0 py-0">Timestamp goes here.</p>
+    <span class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+  </div>
+  <footer class="footer mt-auto py-3 bg-light d-print-none">
+    <div class="container">
+      <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+    </div>
+  </footer>
+</body>
