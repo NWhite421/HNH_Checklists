@@ -2,6 +2,10 @@
     .form-check-label {
         font-weight: bold;
     }
+
+    main {
+        padding: 70px 15px 0;
+      }
 }
 
 @media print {
