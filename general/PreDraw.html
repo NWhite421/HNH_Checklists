@@ -9,114 +9,147 @@
   <link href="../hnh_icon_color.png" rel="icon">
   <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
   <script src="../Frameworks/Internal/internalScripts.js"></script>
-  <title>Pre-Draw - H &amp; H Survey Consultants LLC</title>
+  <title>Pre-Draw - General - H &amp; H Survey Consultants LLC</title>
 </head>
 
-<body class="d-flex flex-column h-100">
-  <div class="container-fluid bg-light d-print-none">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-9 align">
-          <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
-            <ol class="breadcrumb">
-              <a href="../index.html" class="breadcrumb-item">Home</a>
-              <li class="breadcrumb-item">I. General Requirements</a>
-              <li class="breadcrumb-item active" aria-current="page">Part 1. Pre-Draw</li>
-            </ol>
-          </nav>
-        </div>
-        <div class="col-12 col-md-3 d-grid text-center">
-          <div class="btn-group my-2">
-            <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Part 1. Pre-Draw
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="#">Part 1. Pre-Draw</a></li>
-              <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
-              <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
-              <li><a class="dropdown-item disabled" href="#">Part 4. Formboard Survey</a></li>
-              <li><a class="dropdown-item disabled" href="#">Part 5. Final Survey</a></li>
-            </ul>
-          </div>
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--User Name-->
+          <form class="d-flex">
+            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
+            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
+          </form>
+          <!--Breadcrumb-->
+          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">I. General Requirements</a>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Part 1. Pre-Draw</li>
+          </ol>
+          <!--Goto section-->
+          <form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 1. Pre-Draw
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item active" href="#">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item disabled" href="#">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item disabled" href="#">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="container-md mt-2">
-    <div class="row align-items-center justify-content-md-between">
-      <div class="col-12 d-none d-print-block text-center"><h4>Pre-Draw Checklist</h4></div>
-      <div class="col-6 col-md-4 align-middle">
-        <p class="mb-0 pb-1"><strong>User: </strong><span id="currentUser"></span> <button onclick="changeUsername()" class="btn btn-primary btn-sm d-print-none">Not you?</button></p>
+  <main class="flex-shrink-0">
+
+    <!--Print header-->
+    <div class="container-fluid mx-auto text-center d-none d-print-block">
+      <h3 class="my-0 py-0">General Pre-Draw Checklist</h3>
+      <br>
+      <div class="d-flex justify-content-between my-0 py-0">
+        <p class=" my-0 py-0"><strong>USER: </strong><span id="printUserName"></span></p>
+        <p class=" my-0 py-0"><strong>JOB: </strong><span id="printCurrentJob"></span></p>
       </div>
-      <div class="col-6 col-md-4">
-        <div class="d-none d-print-block">
-          <p class="mb-0 pb-1 align-middle"><strong>Job: </strong><span id="currentJob"></span></p>
-        </div>
-        <div class="d-print-none">
-          <div class="input-group">
-            <div class="input-group-text">Project Number</div>
-            <input type="text" class="form-control" id="jobInput" placeholder="No Job Number">
-          </div>
-        </div>
-      </div>
+      <hr>
     </div>
-    <hr>
-    <h3>A. Modelspace Requirements</h3>
-    <div class="row">
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Legal Description
-          Harmony</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">The legal description matches between the property card, deed, and plat. The aerial
-          appears to match the legal description.</p>
+
+    <!--Main area-->
+    <div class="container-md">
+      <!--div no print - handled in Print header section-->
+      <div class="row justify-content-end align-items-center d-print-none">
+        <div class="col-8 d-none d-md-block">
+          <h3>Pre-Draw Checklist</h3>
+        </div>
+        <div class="col-12 col-lg-4">
+          <form>
+            <div class="input-group mb-3">
+              <span class="input-group-text d-block d-xl-none" id="basic-addon1a">Project</span>
+              <span class="input-group-text d-none d-xl-block" id="basic-addon1">Project Number</span>
+              <input type="text" id="jobInput" class="form-control" placeholder="No Project Added"
+                aria-label="Project Number" aria-describedby="basic-addon1">
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Boundary And Adjacent
-          Information</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">The boundary, adjacent parcels, and roads are drafted. Each subject parcel segments have
-          appropriate measurements (bearing and distance for lines, curve data for curves). Easements are drafted and
-          annotated.</p>
-      </div>
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Dimensions
-          Information</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">Add two (2) dimensions, one from each property corner, to the centerline of the right-of-way. Ensure teh accuracy is showing two (2) decimal places.</p>
-      </div>
-      <!--not measements-->
-      <div class="col-6 col-lg-12 mb-2" id="sectiona4">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Road Information</label>
-        <hr class="my-1 d-print-none" />
-        <p class="d-print-none mb-2">Each road directly adjacent to the parcel has: the road name (if the road name is
-          different from the plat, make the current road name large), plat name (if applicable), and a line containing
-          the width of the right-of-way.</p>
+
+      <!--Section A-->
+      <h5>A. Modelspace Requirements</h5>
+      <div class="row">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Legal Description Harmony</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>The legal description matches between the property card, deed, and plat. The aerial
+            appears to match the legal description.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Boundary &amp; Adjacent Information</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p class="mb-1">The boundary, adjacent parcels, and roads are drafted. Each subject parcel segments have
+            appropriate measurements (bearing and distance for lines, curve data for curves). Easements are drafted and
+            annotated.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Dimensions</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Add two (2) dimensions, one from each property corner, to the centerline of the right-of-way. Ensure teh accuracy is showing two (2) decimal places.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Road Information</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Each road directly adjacent to the parcel has: the road name (if the road name is
+            different from the plat, make the current road name large), plat name (if applicable), and a line containing
+            the width of the right-of-way.</p>
+        </div>
         <div class="row text-center d-print-none">
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <p class="my-0">Default Street Label</p>
             <h5 class="my-0 text-muted">EXAMPLE STREET</h5>
             <p class="text-muted">50.0' R/W(P)</p>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <p class="my-0">Varying Width R/W</p>
             <h5 class="my-0 text-muted">EXAMPLE STREET</h5>
             <p class="text-muted">R/W WIDTH VARIES(P)</p>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <p class="my-0 d-print-none">Road Name Does Not Match Plat</p>
             <p class="my-0 d-none">Road Name Does Not Match Plat</p>
             <h5 class="my-0 text-muted">EXAMPLE STREET</h5>
             <p class="text-muted">PLATTED ROAD NAME(P)<br>50.0' R/W(P)</p>
           </div>
+        </div>        
+        <hr class="d-none d-sm-block" id="sectiona5">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. Adjacent Parcel Information</label>
         </div>
-      </div>
-      <div class="col-6 col-lg-12 mb-2" id="sectiona5">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. Adjacent Parcel
-          Information</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">List the lot number and whether the lot is improved, vacant, or the <abbr
-            title="Finish Floor Elevation">FFE</abbr> of the building (depending on available information).</p>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>List the lot number and whether the lot is improved, vacant, or the <abbr title="Finish Floor Elevation">FFE</abbr> of the building (depending on available information).</p>
+        </div>
         <div class="row d-print-none text-center">
           <div class="col-12 col-md-3">
             <p class="my-0 alert-success">Improved Lot (No FFE)</p>
@@ -136,78 +169,100 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <h3>B. Paperspace Requirements</h3>
-    <div class="row">
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. North Arrow and
-          Scale</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">The north arrow is present and rotated to north.</p>
-      </div>
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 6. Legal Description</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">The legal description is filled out either using the helper (lot &amp; block lots only)
-          or manually typing the description.</p>
-      </div>
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 7. Lot Information</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">The "BOUNDARY SURVEY CERTIFIED TO," "PROPERTY ADDRESS," and "LOT SIZE" text items are
-          filled out.</p>
-      </div>
-      <div class="col-6 col-lg-12 mb-2">
-        <label class="form-check-label"><input type="checkbox" class="form-check-input"> 8. Surveyor's Notes</label>
-        <hr class="my-1 d-print-none">
-        <p class="d-print-none">Surveyor's Notes 2, 6, and 9 are filled out (orange sections).</p>
-      </div>
-    </div>
-
-
-    <div id="commentSection" class="d-none">
-      <hr>
-      <h6>Comments</h6>
-      <div id="commentContent"></div>
-    </div>
-
-    <div class="d-none d-print-block">
-      <p><br>[End of document]</p>
-    </div>
-
-    <div id="commentSectionEditArea" class="d-print-none">
-      <h5>Comments</h5>
-      <div class="row mb-2">
-        <div class="col-12">
-          <textarea class="form-control" rows="4" id="commentSectionText"></textarea>
+      <!--Section B-->
+      <h5>B. Paperspace Requirements</h5>
+      <div class="row">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Legal Description</label>
         </div>
-        <div class="col-12 d-print-none">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="includeCommentSection">
-            <label class="form-check-label" for="includeCommentSection">Include comment section on print</label>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Add the legal description by either using the legal description helper (lot and block lots only) or typing out the legal description.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Lot Information</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Fill out the information below each of the following headers with the required information.</p>
+        </div>
+        <div class="col-10 offset-2">
+          <dl class="row">
+            <dt class="col-sm-2">Boundary Survey Certified To</dt>
+            <dd class="col-sm-10">The owner of the parcel, can be either a company (i.e. LGI Homes) or a individual or individuals (i.e. John Smith).</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-2">Property Address</dt>
+            <dd class="col-sm-10">The street address of the parcel if a street number has been assigned. If a street number has not been assigned, include the parcel identification number with the address (street name).</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-2">Lot Size</dt>
+            <dd class="col-sm-10">The area of the lot to the nearest square foot.</dd>
+          </dl>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Surveyor's Notes</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Fill out the missing sections in the Surveyor's Notes.</p>
+        </div>
+        <div class="col-10 offset-2">
+          <dl class="row">
+            <dt class="col-sm-2">Surveyor's Note 2</dt>
+            <dd class="col-sm-10">[I forgot what note 2 was]</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-2">Surveyor's Note 6<br>FEMA FIRM</dt>
+            <dd class="col-sm-10">Fill out the community name (unincorporated area are the county name only), panel number, effective date, and the flood zone(s). <a target="_blank" href="https://msc.fema.gov/portal/search">Website</a> <a target="_blank" href="https://hazards-fema.maps.arcgis.com/apps/webappviewer/index.html?id=8b0adb51996444d4879338b5529aa9cd">GIS</a></dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-2">Surveyor's Note 9<br>FPRN CORS</dt>
+            <dd class="col-sm-10">Fill with at least <abbr title="Florida Permanent Reference System">FPRN</abbr> <abbr title="Continuously Operating Reference Stations">CORS</abbr> stations.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!--page only section-->
+      <div id="pageOnly" class="d-print-none">
+        <div class="row mt-4">
+          <div class="col-12">
+            <form>
+              <h5>Comments</h5>
+              <textarea class="form-control" rows="4" id="commentSectionText"
+                placeholder="Enter your comments here."></textarea>
+            </form>
+          </div>
+          <div class="col-6 col-sm-3 mt-3 d-grid">
+            <button type="button" class="btn btn-primary" onclick="uncheckAll()">Clear Form</button>
+          </div>
+          <div class="col-6 col-sm-3 mt-3 d-grid">
+            <button type="button" class="btn btn-primary" onclick="window.print()">Print Form</button>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row mb-2">
-      <div class="col-4">
-        <div class="d-flex">
-          <button type="button" class="btn btn-primary d-print-none me-2" onclick="uncheckAll()">Clear Form</button>
-          <button type="button" class="btn btn-primary d-print-none" onclick="window.print()">Print Form</button>
-        </div>
+      <!--Print only section-->
+      <div id="PrintOnly" class="d-none d-print-block">
+        <h6>Comments</h6>
+        <p id="commentContent" class="ps-2"></p>
       </div>
     </div>
-  </div>
 
-  <div class="mt-auto pt-1 d-none d-print-block text-center">
-    <p id="timestamp" class="my-0 py-0">Timestamp goes here.</p>
-    <span class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
-  </div>
-  <footer class="footer mt-auto py-3 bg-light d-print-none">
-    <div class="container">
-      <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+  </main>
+
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
     </div>
   </footer>
 </body>
