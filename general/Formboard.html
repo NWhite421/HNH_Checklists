@@ -9,13 +9,7 @@
   <link href="../hnh_icon_color.png" rel="icon">
   <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
   <script src="../Frameworks/Internal/internalScripts.js"></script>
-  <title>Site Plan - General - H &amp; H Survey Consultants LLC</title>
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-      <path
-        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-    </symbol>
-  </svg>
+  <title>Formboard - General - H &amp; H Survey Consultants LLC</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -41,20 +35,20 @@
           <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
             <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
             <li class="breadcrumb-item">I. General Requirements</a>
-            <li class="breadcrumb-item text-reset active" aria-current="page">Part 3. Site Plan</li>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Part 4. Formboard Survey</li>
           </ol>
           <!--Goto section-->
           <form class="d-flex">
             <div class="btn-group">
               <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Part 3. Site Plan
+                Part 4. Formboard Survey
               </button>
               <ul class="dropdown-menu dropdown-menu-lg-end">
                 <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
                 <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
-                <li><a class="dropdown-item active" href="#">Part 3. Site Plan</a></li>
-                <li><a class="dropdown-item" href="Formboard.html">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item active" href="#">Part 4. Formboard Survey</a></li>
                 <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
               </ul>
             </div>
@@ -68,7 +62,7 @@
 
     <!--Print header-->
     <div class="container-fluid mx-auto text-center d-none d-print-block">
-      <h3 class="my-0 py-0">General Site Plan Checklist</h3>
+      <h3 class="my-0 py-0">Formboard Survey Checklist</h3>
       <br>
       <div class="d-flex justify-content-between my-0 py-0">
         <p class=" my-0 py-0"><strong>USER: </strong><span id="printUserName"></span></p>
@@ -82,7 +76,7 @@
       <!--div no print - handled in Print header section-->
       <div class="row justify-content-end align-items-center d-print-none">
         <div class="col-8 d-none d-md-block">
-          <h3>Site Plan Checklist</h3>
+          <h3>Formboard Survey Checklist</h3>
         </div>
         <div class="col-12 col-lg-4">
           <form>
@@ -96,104 +90,126 @@
         </div>
       </div>
 
+      <!--Preamble Section-->
+      <h5 class="d-print-none">P-1. AutoCAD Setup</h5>
+      <div class="row d-print-none">
+        <!--Definitions-->
+        <div class="col-12 col-sm-6">
+          <dl class="row">
+            <dt class="col-sm-3">Formboards</dt>
+            <dd class="col-sm-9">Wooden boards installed to set limits on concrete pours. Concrete usually has not been poured yet. Asked for verification of building location or verify elevations.</dd>
+          </dl>
+        </div>
+        <div class="col-12 col-sm-6">
+          <dl class="row">
+            <dt class="col-sm-3">Foundation</dt>
+            <dd class="col-sm-9">The building base made out of concrete. Asked for verification of elevations.</dd>
+          </dl>
+        </div>
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Open the point group "GROUND SHOTS", click on the "EXCLUDE" tab, "check the "INCLUDE POINT NUMBERS WITH" button, and click the "SELECT" button. The dialog will close and allow you to select cogo points. Select all the ground elevations shown during the boundary &amp; topographic portion of the project. This will hide the elevations without deleting them.</p>
+          <p class="alert-warning d-print-none py-0 px-2">If autoCAD warns there you are overriding points, you can select the <strong>Override</strong> option if the data is the same (i.e. control points being reinserted) or <strong>Use Next Available Number</strong> if you thing the data is not the same (i.e. same number, different shots).</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Import Points</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Import your field field (*.txt) into AutoCAD using the <span class="autocad-command">importpoints</span> command with the PNEZD (comma-delinted) format.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Run the <span class="autocad-command">UPDATEALLPOINTGROUPS</span> command to automatically apply styles to applicable points.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Change Modelspace Scale</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>You can easily change the scale of cogo points by changing the scale of the modelspace (lower right corner). The closer to 1" = 1', the smaller the display size</p>
+        </div>
+      </div>
+
       <!--Section A-->
-      <h5>A. House</h5>
+      <h5>A. Modelspace</h5>
       <div class="row">
+        <!--Standard Entry.-->
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. House Creation</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Hide Proposed Information</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Either import the house model from our <strong>Homebuilder Houses.dwg</strong> file, double checking garage
-            orientation; or draft a house model from the <strong>foundation plan</strong> of the architectural plans.
-            Rotate the house to match the lot orientation.</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Location</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">Verify the setbacks for the property. Place the building centered between the left and right
-            property line and the front setback line + 1.00 foot.</p>
-          <p class="alert-warning d-print-none"><strong>Townhomes consideration: </strong> When placing a townhome on a
-            lot, also verify that the seperation walls fall on the property line.</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Building ties</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Provide a building tie on each side of the building (minimum one) perpendicular to that side's property
-            line. The tie will be located on a notable point of the building (building corner or intersection). If a tie
-            falls outside of the property, a building tie is not required.</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Driveway</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Extend the driveway lines to meet the edge of pavement line. Keep the flairs of the driveway intact.</p>
-        </div>
-      </div>
-
-      <!--Section B-->
-      <h5 class="mt-1 mt-sm-3">B. Grading</h5>
-      <div class="row">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. FFE Determination</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Unless otherwise specified, the <abbr title="Finish Floor Elevation">FFE</abbr> for the proposed house is
-            1.50' above the crown of the road at the middle of the lot.</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Proposed
-            Elevations</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">With the following considerations, determine elevations for the lot and place proposed
-            elevations where required.</p>
-          <div class="d-print-none">
-            <ul class="list-unstyled">
-              <li><span class="badge bg-primary">Primary Consideration</span> Ground flow next the road (flow left or
-                flow right).</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Current ground elevations.</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Neighbor ground elevations.</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Swale and berm requirements.</li>
-              <li><span class="badge bg-secondary">Secondary Consideration</span> Retention pond or other water body
-                adjacent to parcel.</li>
-              <li><span class="badge bg-secondary">Secondary Consideration</span> Allowed drainages (Type-A, Type-B,
-                Type-C).</li>
-            </ul>
+          <p>Hide the following list of layers (only if a site plan was completed):</p>
+          <!--Page only section-->
+          <div class="d-print-none mb-3">
+            <div class="row text-center">
+              <div class="col-12 col-sm-3">CONCRETE-PROPOSED</div>
+              <div class="col-12 col-sm-3">UTILITIES-PROPOSED</div>
+              <div class="col-12 col-sm-3">TOPO-PROPOSED</div>
+              <div class="col-12 col-sm-3">TEXT-PROPOSED</div>
+            </div>
           </div>
+          <!--Print only section-->
           <div class="d-none d-print-block">
-            <p class="text-muted fst-italic">For the list of considerations, please view the online checklist.</p>
+            <p class="text-muted fst-italic">For a list, see the online checklist.</p>
           </div>
+          <p class="alert-warning px-2">Ensure that no information about property corners, boundary information, or adjacent parcel information has disappeared. If it has, turn the layer back on and adjust the object's layer to be correct.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Drainage Arrows</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add drainage arrows in between proposed elevations. Rotate arrows to show intended flow direction.</p>
+          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Building Dimensions &amp; ties</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Review the location of the house points compared to site plan location (if available). Perform one of the following three (3) actions:</p>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &lt;0.2' from plan</dt>
+            <dd class="col-sm-9">You can leave the linework in the same location and only adjust the building dimensions and ties.</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &gt;0.2' from plan or No site plan was completed</dt>
+            <dd class="col-sm-9">Draw the linework, building dimensions, and ties to the point locations.</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &gt;2.0' from plan</dt>
+            <dd class="col-sm-9">Do not adjust any linework or dimensions. Notify a Surveyor of the observation immediately.</dd>
+          </dl>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
         </div>
       </div>
-
-      <!--Section C-->
-      <h5 class="mt-1 mt-sm-3">C. Paperspace</h5>
+      
+      <h5 class="mt-1 mt-sm-3">B. Paperspace</h5>
       <div class="row">
         <div class="col-12 col-sm-2">
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Heading</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Set the text directly below the logo to say "SITE PLAN".</p>
+          <p>Set the text directly below the logo to say "FORMBOARD SURVEY" or "FOUNDATION SURVEY" as needed.</p>
+          <p class="alert-info mx-2"><strong>Palm Coast Only</strong> Under the title, add the City of Palm Coast permit number, found at <a class="alert-link" href="https://www.palmcoastgov.com/eplanreview">this site</a>.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Drainage Arrows</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Inherited Survey Items</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add drainage arrows in between proposed elevations. Rotate arrows to show intended flow direction.</p>
+          <p>If this survey was inherited at the formboard / foundation stage, ensure that <a href="PreDraw.html">Part 1. Pre-Draw</a> and <a href="BoundaryTopo.html#sectionA">Part II(A). Boundary Survey</a> items have been fully satisfied.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -203,8 +219,8 @@
           <p>Add a site plan date to Surveyor's notes.</p>
           <dl class="row">
             <dt class="col-sm-2">Surveyor's Note 2</dt>
-            <dd class="col-sm-10">Add onto the existing note with "; SITE PLAN [DATE]"<br>
-            <span class="text-muted">Sample: DATE OF FIELD SURVEY: 01/01/2022; SITE PLAN 02/01/2022</span></dd>
+            <dd class="col-sm-10">Add onto the existing note with "; [FORMBOARD/FOUNDATION] [DATE]"<br>
+            <span class="text-muted">Sample: DATE OF FIELD SURVEY: 01/01/2022; SITE PLAN 02/01/2022; FORMBOARD 03/01/2022</span></dd>
           </dl>
         </div>
       </div>
@@ -241,14 +257,7 @@
     <!--page only section-->
     <div class="container-fluid bg-light py-3 d-print-none mt-2">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 text-center text-sm-start">
-            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
-          </div>
-          <div class="col-12 col-sm-6 text-center text-sm-end">
-            <a href="../LegalNotice.html">Legal Notices</a>
-          </div>
-        </div>
+        <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
       </div>
     </div>
     <!--Print only section-->

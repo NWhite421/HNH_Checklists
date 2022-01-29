@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../hnh_icon_color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <title>Homebuilder Matrix - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--User Name-->
+          <form class="d-flex">
+            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
+            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
+          </form>
+          <!--Breadcrumb-->
+          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+            <li class="breadcrumb-item active text-reset">Home</a>
+          </ol>
+          <!--Goto section-->
+          <form class="d-none">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 3. Site Plan
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item active" href="#">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item disabled" href="#">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item disabled" href="#">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+    <div class="container-md">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" width="30%">Item</th>
+            <th scope="col" class="text-center">Palm Coast</th>
+            <th scope="col" class="text-center">Palm Bay</th>
+            <th scope="col" class="text-center">Deltona</th>
+            <th scope="col" class="text-center">Poinciana</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td colspan="5" class="text-center">
+              <h6 class="mb-1">Building Setbacks</h6>  
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Front Setback</th>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Side Setback</th>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Rear Setback</th>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Corner Setback</th>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+            <td>25.00'</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Test yes and no</th>
+            <td class="yes" ></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-end">
+            <a href="../LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small>[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>

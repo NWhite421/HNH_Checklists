@@ -16,6 +16,18 @@
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
     }
+
+    td.yes::before {
+        font-weight: bold;
+        content: "\2713";
+        color: var(--bs-success);
+    }
+
+    td.no::before {
+        font-weight: bold;
+        content: "\2717";
+        color: var(--bs-danger);
+    }
 }
 
 @media print {
