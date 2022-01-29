@@ -90,60 +90,130 @@
         </div>
       </div>
 
-      <!--Section A-->
-      <h5>SECTION TITLE</h5>
-      <div class="row">
-        <!--Standard Entry.-->
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">DESCRIPTION</p>
-          <p class="alert-warning d-print-none py-0 px-2">NOTICE AREA</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <!--Entry with seperate information between page and print.-->
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">DESCRIPTION</p>
-          <!--Page only section-->
-          <div class="d-print-none mb-3">
-            PAGE ONLY SECTION
-          </div>
-          <!--Print only section-->
-          <div class="d-none d-print-block">
-            <p class="text-muted fst-italic">PRINT ONLY SECTION</p>
-          </div>
-        </div>
-        <hr class="d-none d-sm-block">
-        <!--Entry with additional information on page and print.-->
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add a site plan date to Surveyor's notes.</p>
-          <!--Page and Print section-->
+      <!--Preamble Section-->
+      <h5 class="d-print-none">P-1. AutoCAD Setup</h5>
+      <div class="row d-print-none">
+        <!--Definitions-->
+        <div class="col-12 col-sm-6">
           <dl class="row">
-            <dt class="col-sm-2">Surveyor's Note 2</dt>
-            <dd class="col-sm-10">Add onto the existing note with "; SITE PLAN [DATE]"<br>
-            <span class="text-muted">Sample: DATE OF FIELD SURVEY: 01/01/2022; SITE PLAN 02/01/2022</span></dd>
+            <dt class="col-sm-3">Formboards</dt>
+            <dd class="col-sm-9">Wooden boards installed to set limits on concrete pours. Concrete usually has not been poured yet. Asked for verification of building location or verify elevations.</dd>
           </dl>
+        </div>
+        <div class="col-12 col-sm-6">
+          <dl class="row">
+            <dt class="col-sm-3">Foundation</dt>
+            <dd class="col-sm-9">The building base made out of concrete. Asked for verification of elevations.</dd>
+          </dl>
+        </div>
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Open the point group "GROUND SHOTS", click on the "EXCLUDE" tab, "check the "INCLUDE POINT NUMBERS WITH" button, and click the "SELECT" button. The dialog will close and allow you to select cogo points. Select all the ground elevations shown during the boundary &amp; topographic portion of the project. This will hide the elevations without deleting them.</p>
+          <p class="alert-warning d-print-none py-0 px-2">If autoCAD warns there you are overriding points, you can select the <strong>Override</strong> option if the data is the same (i.e. control points being reinserted) or <strong>Use Next Available Number</strong> if you thing the data is not the same (i.e. same number, different shots).</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Import Points</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Import your field field (*.txt) into AutoCAD using the <span class="autocad-command">importpoints</span> command with the PNEZD (comma-delinted) format.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Run the <span class="autocad-command">UPDATEALLPOINTGROUPS</span> command to automatically apply styles to applicable points.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Change Modelspace Scale</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>You can easily change the scale of cogo points by changing the scale of the modelspace (lower right corner). The closer to 1" = 1', the smaller the display size</p>
         </div>
       </div>
 
-      <h5 class="mt-1 mt-sm-3">C. Paperspace</h5>
+      <!--Section A-->
+      <h5>A. Modelspace</h5>
+      <div class="row">
+        <!--Standard Entry.-->
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Hide Proposed Information</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Hide the following list of layers (only if a site plan was completed):</p>
+          <!--Page only section-->
+          <div class="d-print-none mb-3">
+            <div class="row text-center">
+              <div class="col-12 col-sm-3">CONCRETE-PROPOSED</div>
+              <div class="col-12 col-sm-3">UTILITIES-PROPOSED</div>
+              <div class="col-12 col-sm-3">TOPO-PROPOSED</div>
+              <div class="col-12 col-sm-3">TEXT-PROPOSED</div>
+            </div>
+          </div>
+          <!--Print only section-->
+          <div class="d-none d-print-block">
+            <p class="text-muted fst-italic">For a list, see the online checklist.</p>
+          </div>
+          <p class="alert-warning px-2">Ensure that no information about property corners, boundary information, or adjacent parcel information has disappeared. If it has, turn the layer back on and adjust the object's layer to be correct.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Building Dimensions &amp; ties</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Review the location of the house points compared to site plan location (if available). Perform one of the following three (3) actions:</p>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &lt;0.2' from plan</dt>
+            <dd class="col-sm-9">You can leave the linework in the same location and only adjust the building dimensions and ties.</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &gt;0.2' from plan or No site plan was completed</dt>
+            <dd class="col-sm-9">Draw the linework, building dimensions, and ties to the point locations.</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-sm-3">Points are &gt;2.0' from plan</dt>
+            <dd class="col-sm-9">Do not adjust any linework or dimensions. Notify a Surveyor of the observation immediately.</dd>
+          </dl>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
+        </div>
+      </div>
+      
+      <h5 class="mt-1 mt-sm-3">B. Paperspace</h5>
       <div class="row">
         <div class="col-12 col-sm-2">
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Heading</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
           <p>Set the text directly below the logo to say "FORMBOARD SURVEY" or "FOUNDATION SURVEY" as needed.</p>
+          <p class="alert-info mx-2"><strong>Palm Coast Only</strong> Under the title, add the City of Palm Coast permit number, found at <a class="alert-link" href="https://www.palmcoastgov.com/eplanreview">this site</a>.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Surveyor's Notes</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Inherited Survey Items</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>If this survey was inherited at the formboard / foundation stage, ensure that <a href="PreDraw.html">Part 1. Pre-Draw</a> and <a href="BoundaryTopo.html#sectionA">Part II(A). Boundary Survey</a> items have been fully satisfied.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Surveyor's Notes</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
           <p>Add a site plan date to Surveyor's notes.</p>
