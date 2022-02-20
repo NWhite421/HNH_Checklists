@@ -1,0 +1,132 @@
+<!--
+Filename: c:\Projects\HNH_Checklists\calculators\inverts.html
+Path: c:\Projects\HNH_Checklists\calculators
+Created Date: Sunday, February 20th 2022, 12:45:37 pm
+Author: Nathan (ThatFloridaMan)
+
+Copyright (c) 2022 Your Company
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../hnh_icon_color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <script src="../Frameworks/internal/invertCalc.js"></script>
+  <title>Invert Calculator - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--User Name-->
+          <form class="d-flex">
+            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
+            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
+          </form>
+          <!--Breadcrumb-->
+          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">Calculators</a>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Invert Measure Downs</li>
+          </ol>
+          <!--Goto section-->
+          <!--form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 4. Formboard Survey
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item active" href="#">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+
+    <!--Main area-->
+    <div class="container-md">
+      <!--div no print - handled in Print header section-->
+      <form>
+        <div class="row">
+          <div class="col-12 col-md-4 mb-2">
+            <label for="topElevationValue" class="form-label">Rim Elevation</label>
+            <input type="text" id="topElevationValue" class="form-control" placeholder="00.00">
+            <p class="fs-6 text-danger" id="topElevationError" hidden>Value cannot be empty.</p>
+          </div>
+          <div class="col-12 col-md-4 mb-2">
+            <label for="invertDistanceValue" class="form-label">Invert Distance</label>
+            <input type="text" id="invertDistanceValue" class="form-control" placeholder="00.00">
+            <p class="fs-6 text-danger" id="invertError" hidden>Value cannot be empty.</p>
+          </div>
+          <div class="col-12 col-md-4 mb-2">
+            <label for="inputAngleValue" class="form-label">Angle From Straight Down</label>
+            <input type="text" id="inputAngleValue" class="form-control" placeholder="00.00">
+            <p class="fs-6 text-danger" id="angleError" hidden>Value cannot be empty.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-2 mb-3 d-grid">
+          <button type="button" class="btn btn-success" onclick="onPressCalc()">Calculate</button>
+        </div>
+      </form>
+
+      <table id="resultTable">
+        <thead>
+          <th><h4>Calculation History</h4></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="history"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row mt-2">
+        <div class="col-12 col-md-3 mb-2 d-grid">
+          <button type="button" class="btn btn-success" onclick="clearHistory()">Clear</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>
