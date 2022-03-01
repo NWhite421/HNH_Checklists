@@ -8,7 +8,10 @@ var readdNoprint = false;
 var pageTitle = "";
 
 function onPageLoad() {
-  checkCookie();
+  var field = document.getElementById("currentUser");
+  if (field != null) {
+    checkCookie();
+  }
 }
 
 function onPagePrint() {
