@@ -36,13 +36,8 @@ Copyright (c) 2022 Your Company
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <!--User Name-->
-          <form class="d-flex">
-            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
-            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
-          </form>
           <!--Breadcrumb-->
-          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+          <ol class="breadcrumb my-auto text-white d-md-flex">
             <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
             <li class="breadcrumb-item">Calculators</a>
             <li class="breadcrumb-item text-reset active" aria-current="page">Invert Measure Downs</li>
@@ -72,47 +67,61 @@ Copyright (c) 2022 Your Company
 
     <!--Main area-->
     <div class="container-md">
-      <!--div no print - handled in Print header section-->
-      <form>
-        <div class="row">
-          <div class="col-12 col-md-4 mb-2">
-            <label for="topElevationValue" class="form-label">Rim Elevation</label>
-            <input type="number" id="topElevationValue" class="form-control" placeholder="00.00">
-            <p class="fs-6 text-danger" id="topElevationError" hidden>Value cannot be empty.</p>
-          </div>
-          <div class="col-12 col-md-4 mb-2">
-            <label for="invertDistanceValue" class="form-label">Invert Distance</label>
-            <input type="number" id="invertDistanceValue" class="form-control" placeholder="00.00">
-            <p class="fs-6 text-danger" id="invertError" hidden>Value cannot be empty.</p>
-          </div>
-          <div class="col-12 col-md-4 mb-2">
-            <label for="inputAngleValue" class="form-label">Angle From Straight Down</label>
-            <input type="number" id="inputAngleValue" class="form-control" placeholder="00.00">
-            <p class="fs-6 text-danger" id="angleError" hidden>Value cannot be empty.</p>
-          </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <form>
+            <h5 class="pt-2">
+              Rim Elevation
+            </h5>
+            <input class="form-control" type="number" placeholder="0.00" id="topElevation">
+            <small id="topElevationError" class="text-danger" hidden>Test</small>
+            <h5 class="pt-2">
+              Measure Down Elevation
+            </h5>
+            <input class="form-control" type="number" placeholder="0.00" id="measureElevation" onkeypress="return keyPressToProceed(event)">
+            <small id="measureElevationError" class="text-danger" hidden>Test</small>
+            <h5 class="pt-2">
+              Measure Down Angle
+            </h5>
+            <input class="form-control" type="number" placeholder="0.00" id="measureAngle" onkeypress="return keyPressToProceed(event)">
+            <small id="measureAngleError" class="text-danger" hidden>Test</small>
+            <div class="row py-3">
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-primary" value="Calculate" onclick="onPressCalc()">
+              </div>
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-secondary" value="Clear" onclick="clearForm(true)">
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="col-12 col-md-2 mb-3 d-grid">
-          <button type="button" class="btn btn-success" onclick="onPressCalc()">Calculate</button>
-        </div>
-      </form>
-
-      <table id="resultTable">
-        <thead>
-          <th><h4>Calculation History</h4></th>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="history"></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row mt-2">
-        <div class="col-12 col-md-3 mb-2 d-grid">
-          <button type="button" class="btn btn-success" onclick="clearHistory()">Clear</button>
+        <div class="col-12 col-md-8 pt-2">
+          <div class="row">
+            <div class="col-6 col-md-8">
+              <h5 class="my-auto">
+                History
+              </h5>
+            </div>
+            <div class="col-6 col-md-4 d-grid">
+              <input type="button" class="btn btn-primary" value="Clear History" onclick="clearHistory()">
+            </div>
+          </div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Time</th>
+                <th>Equation</th>
+                <th style="width: 100px;">Result</th>
+              </tr>
+            </thead>
+            <tbody id="resultArea">
+      
+            </tbody>
+          </table>
         </div>
       </div>
+      
     </div>
-
   </main>
 
   <footer class="footer mt-auto">

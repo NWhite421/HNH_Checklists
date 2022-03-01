@@ -7,89 +7,120 @@
  * Copyright (c) 2022 Your Company
  */
 
-function onPressCalc() {
-  var topElText = document.getElementById("topElevationValue").value;
-  var invDistanceText = document.getElementById("invertDistanceValue").value;
-  var angleText = document.getElementById("inputAngleValue").value;
-  var stopCalc = false;
-
-  console.log(topElText + ", " + invDistanceText + ", " + angleText);
-
-  if (topElText == "") {
-    document.getElementById("topElevationError").hidden = false;
-    document.getElementById("topElevationError").innerText = "Please enter a value."
-    stopCalc = true;
-  }
-  if (invDistanceText == "") {
-    document.getElementById("invertError").hidden = false;
-    document.getElementById("invertError").innerText = "Please enter a value."
-    stopCalc = true;
+//Grabs value from input of type 'number' and handles errors.
+function getNumberElementValue(element, optional, allowNegatives) {
+  var elementObj = document.getElementById(element);
+  var elementErrorObj = document.getElementById(element + "Error");
+  if (elementObj == null) {
+    console.error("element [" + element + "] is not a valid element.");
+    return NaN;
   }
 
-  if (stopCalc) {
-    console.log("Calculation cancelled.");
-    return;
+  var value = elementObj.value;
+
+  //console.log("Key value pair: [" + element + "," + value + "]")
+
+  if (!optional && (isNaN(value) || value == "")) {
+    elementErrorObj.innerText = "Value needs to be a number";
+    elementErrorObj.hidden = false;
+    return NaN;
   }
 
-  var topElNumber = parseFloat(topElText);
-  var invDistanceNumber = parseFloat(invDistanceText);
-  var angleNumber = parseFloat(angleText);
-
-
-  if (isNaN(topElNumber)) {
-    document.getElementById("topElevationError").hidden = false;
-    document.getElementById("topElevationError").innerText = "Please enter a number.";
-    stopCalc = true;
-  }
-  if (isNaN(invDistanceNumber) || invDistanceNumber < 0) {
-    document.getElementById("invertError").hidden = false;
-    document.getElementById("invertError").innerText = "Please enter a positive number.";
-    stopCalc = true;
-  }
-  if (angleText != "" && isNaN(angleNumber)) {
-    document.getElementById("angleError").hidden = false;
-    document.getElementById("angleError").innerText = "Please enter a number.";
-    stopCalc = true;
-  }
-  else if(angleText == "") {
-    angleNumber = 0;
+  if (optional && (isNaN(value) || value == "")) {
+    value = 0;
   }
 
-  console.log(topElNumber + ", " + invDistanceNumber + ", " + angleNumber);
-
-  if (stopCalc) {
-    console.log("Calculation cancelled.");
-    return;
+  if (!allowNegatives && value < 0) {
+    elementErrorObj.innerText = "Value needs to be greater than 0";
+    elementErrorObj.hidden = false;
+    return NaN;
   }
 
-  document.getElementById("topElevationError").hidden = true;
-  document.getElementById("invertError").hidden = true;
-  document.getElementById("angleError").hidden = true;
-
-  var res = topElNumber - (invDistanceNumber * Math.cos(degrees_to_radians(angleNumber)));
-  if (isNaN(res)){
-    window.alert("A calculation error occurred, please report this issue with the information in the log.");
-    return;
-  }
-  createRow(topElNumber, invDistanceNumber, angleNumber, res);
-  document.getElementById("invertDistanceValue").value = "";
-  document.getElementById("inputAngleValue").value = "";
-  document.getElementById("invertDistanceValue").focus();
+  elementErrorObj.hidden = true;
+  return value;
 }
 
-function createRow(top, inv, angle, result) {
-  var cell = document.getElementById("history");
-  var newText = top.toFixed(2) + "-"+ (inv * Math.cos(degrees_to_radians(angle))).toFixed(2) + "[" + inv.toFixed(2) + "*cos(" + angle.toFixed() + ")]=<span style='font-weight:bold'>"+ result.toFixed(2) + "</span><br/>"; 
+function onPressCalc() {
+  var topEl = getNumberElementValue("topElevation", false, true);
+  console.log("Key value pair: [topElevation," + topEl + "]")
+  var mdDistance = getNumberElementValue("measureElevation", false, false);
+  console.log("Key value pair: [measureElevation," + mdDistance + "]")
+  var mdAngle = getNumberElementValue("measureAngle", true, false);
+  console.log("Key value pair: [measureAngle," + mdAngle + "]")
+  
+  if (isNaN(topEl) || isNaN(mdDistance) || isNaN(mdAngle)) {
+    console.log("Could not contine, not enough values were provided.");
+    return;
+  }
+
+  var result = topEl - mdDistance * Math.cos(degreesToRadians(mdAngle));
+  console.log(result);
+
+  createRow(topEl, mdDistance, mdAngle, result);
+
+  clearForm(false);
+
+  //console.log("Continuing")
+}
+
+
+
+
+function createRow(topEl, mdDistance, mdAngle, result) {
+  var cell = document.getElementById("resultArea");
+
+  var date = new Date();
+  var time = date.getHours().toLocaleString('en-US', {minimumIntegerDigits: 2}) + ":" + date.getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2}) + ":" + date.getSeconds().toLocaleString('en-US', {minimumIntegerDigits: 2});
+
+  var newText = "<tr>"+
+    "<td>" + 
+    time + 
+    "</td><td>" +
+    Number(topEl).toFixed(2) + " - " + (mdDistance * Math.cos(degreesToRadians(mdAngle))).toFixed(2) + "<br><small class='text-muted'>" + Number(mdDistance).toFixed(2) + " * cos(" + Number(mdAngle).toFixed() + ")</small>" + 
+    "</td><td>" +
+    "<span class='fw-bold'>" + result.toFixed(2) + "</span>" +
+    "</td></tr>";
+
   cell.innerHTML += newText;
 }
 
-function degrees_to_radians(degrees)
+function degreesToRadians(degrees)
 {
   var pi = Math.PI;
   return degrees * (pi/180);
 }
 
+function radiansToDegrees(radians){
+  var pi = Math.PI;
+  return radians * (180/pi);
+}
+
 function clearHistory(){
-  var cell = document.getElementById("history");
+  var cell = document.getElementById("resultArea");
   cell.innerHTML = "";
+}
+
+function clearForm(includeRim) {
+  document.getElementById("measureElevation").value = "";
+  document.getElementById("measureAngle").value = "";
+  document.getElementById("measureElevation").focus();
+  if (includeRim) {
+    document.getElementById("topElevation").value = "";
+    document.getElementById("topElevation").focus();
+  }
+
+}
+
+function keyPressToProceed(e) {
+  var keynum;
+
+  if(window.event) { // IE                  
+    keynum = e.keyCode;
+  } else if(e.which){ // Netscape/Firefox/Opera                 
+    keynum = e.which;
+  }
+
+  if (keynum === 13) {
+    onPressCalc();
+  }
 }
