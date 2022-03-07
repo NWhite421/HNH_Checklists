@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
-  <link href="../hnh_icon_color.png" rel="icon">
-  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
-  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <link href="../../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../../hnh_icon_color.png" rel="icon">
+  <script src="../../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Frameworks/Internal/internalScripts.js"></script>
   <title>Site Plan - General - H &amp; H Survey Consultants LLC</title>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -23,8 +23,8 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../hnh_icon_color.png" height="32" alt="Company Logo">
         </a>
         <!--Toggler button-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -39,8 +39,8 @@
           </form>
           <!--Breadcrumb-->
           <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
-            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
-            <li class="breadcrumb-item">I. General Requirements</a>
+            <a href="../../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">II. Palm Coast</a>
             <li class="breadcrumb-item text-reset active" aria-current="page">Part 3. Site Plan</li>
           </ol>
           <!--Goto section-->
@@ -51,11 +51,9 @@
                 Part 3. Site Plan
               </button>
               <ul class="dropdown-menu dropdown-menu-lg-end">
-                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
-                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item disabled" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
                 <li><a class="dropdown-item active" href="#">Part 3. Site Plan</a></li>
-                <li><a class="dropdown-item" href="Formboard.html">Part 4. Formboard Survey</a></li>
-                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+                <li><a class="dropdown-item disabled" href="Final.html">Part 5. Final Survey</a></li>
               </ul>
             </div>
           </form>
@@ -68,7 +66,7 @@
 
     <!--Print header-->
     <div class="container-fluid mx-auto text-center d-none d-print-block">
-      <h3 class="my-0 py-0">General Site Plan Checklist</h3>
+      <h3 class="my-0 py-0">Palm Coast Site Plan Checklist</h3>
       <br>
       <div class="d-flex justify-content-between my-0 py-0">
         <p class=" my-0 py-0"><strong>USER: </strong><span id="printUserName"></span></p>
@@ -82,7 +80,7 @@
       <!--div no print - handled in Print header section-->
       <div class="row justify-content-end align-items-center d-print-none">
         <div class="col-8 d-none d-md-block">
-          <h3>Site Plan Checklist</h3>
+          <h3>Palm Coast Site Plan Checklist</h3>
         </div>
         <div class="col-12 col-lg-4">
           <form>
@@ -93,6 +91,26 @@
                 aria-label="Project Number" aria-describedby="basic-addon1">
             </div>
           </form>
+        </div>
+      </div>
+
+      <div class="row pb-3 d-print-none">
+        <div class="col-12 mb-3">
+          <div class="accordion" id="accordOne">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Sample Site Plan
+                    </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse pb-3" aria-labelledby="headingOne" data-bs-parent="#accordOne">
+                <div class="accordion-body" style="height: 800px;">
+                  <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palmCoast/Site Plan Example.pdf">
+                  <a href="../../resources/palmCoast/Site Plan Example.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -114,8 +132,26 @@
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
           <p class="mb-1">Verify the setbacks for the property. Place the building centered between the left and right
             property lines and behind the front setback line + 1.00 foot.</p>
-          <p class="alert-warning d-print-none"><strong>Townhomes consideration: </strong> When placing a townhome on multiple
-            lots, also verify that the seperation walls fall on the property line.</p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 10%;"></th>
+                <th scope="col" style="width: 22.5%;">Front</th>
+                <th scope="col" style="width: 22.5%;">Side</th>
+                <th scope="col" style="width: 22.5%;">Rear</th>
+                <th scope="col" style="width: 22.5%;">Side (R/W)</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Setback</th>
+                <th>25.0'</th>
+                <th>8.0'</th>
+                <th>20.0'</th>
+                <th>25.0'</th>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -139,43 +175,48 @@
       <h5 class="mt-1 mt-sm-3">B. Grading</h5>
       <div class="row">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. FFE Determination</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Palm Coast Grading Standards</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Unless otherwise specified, the <abbr title="Finish Floor Elevation">FFE</abbr> for the proposed house is
-            1.50' above the crown of the road at the middle of the lot.</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Proposed
-            Elevations</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">With the following considerations, determine elevations for the lot and place proposed
-            elevations where required.</p>
-          <div class="d-print-none">
-            <ul class="list-unstyled">
-              <li><span class="badge bg-primary">Primary Consideration</span> Ground flow next the road (flow left or
-                flow right).</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Current ground elevations.</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Neighbor ground elevations.</li>
-              <li><span class="badge bg-primary">Primary Consideration</span> Swale and berm requirements.</li>
-              <li><span class="badge bg-secondary">Secondary Consideration</span> Retention pond or other water body
-                adjacent to parcel.</li>
-              <li><span class="badge bg-secondary">Secondary Consideration</span> Allowed drainages (Type-A, Type-B,
-                Type-C).</li>
-            </ul>
+          <p>Follow the PDF below for determining the grades on the lot, the <abbr title="Finish Floor Elevation">FFE</abbr>, and drainage arrows.</p>
+          <div class="d-print-none mb-3">
+            <div class="row pb-3">
+              <div class="col-12 mb-3">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOneA">
+                        <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneA" aria-expanded="false" aria-controls="collapseOneA">
+                              Sample Elevations
+                            </button>
+                      </h2>
+                      <div id="collapseOneA" class="accordion-collapse collapse pb-3" aria-labelledby="headingOneA" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="height: 800px;">
+                          <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palmCoast/Sample Elevations.pdf">
+                          <a href="../../resources/palmCoast/Sample Elevations.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Sample Site Plan
+                            </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse pb-3" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="height: 800px;">
+                          <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palmCoast/Site Plan Example.pdf">
+                          <a href="../../resources/palmCoast/Site Plan Example.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
           </div>
+          <!--Print only section-->
           <div class="d-none d-print-block">
-            <p class="text-muted fst-italic">For the list of considerations, please view the online checklist.</p>
+            <p class="text-muted fst-italic">SEE WEBSITE FOR SAMPLE FILE</p>
           </div>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Drainage Arrows</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add drainage arrows in between proposed elevations. Rotate arrows to show intended flow direction.</p>
         </div>
       </div>
 
@@ -247,7 +288,7 @@
             <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
           </div>
           <div class="col-12 col-sm-6 text-center text-sm-end">
-            <a href="../LegalNotice.html">Legal Notices</a>
+            <a href="../../LegalNotice.html">Legal Notices</a>
           </div>
         </div>
       </div>

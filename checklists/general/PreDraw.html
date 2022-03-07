@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
-  <link href="../hnh_icon_color.png" rel="icon">
-  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
-  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <link href="../../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../../hnh_icon_color.png" rel="icon">
+  <script src="../../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Frameworks/Internal/internalScripts.js"></script>
   <title>Pre-Draw - General - H &amp; H Survey Consultants LLC</title>
 </head>
 
@@ -17,8 +17,8 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../hnh_icon_color.png" height="32" alt="Company Logo">
         </a>
         <!--Toggler button-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -33,7 +33,7 @@
           </form>
           <!--Breadcrumb-->
           <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
-            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <a href="../../index.html" class="breadcrumb-item text-reset">Home</a>
             <li class="breadcrumb-item">I. General Requirements</a>
             <li class="breadcrumb-item text-reset active" aria-current="page">Part 1. Pre-Draw</li>
           </ol>
@@ -107,14 +107,14 @@
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p class="mb-1">The boundary, adjacent parcels, and roads are drafted. Each subject parcel segment has
             appropriate measurements (bearing and distance for lines, curve data for curves) (<a href="BoundaryTopo.html">Reference</a>). Easements are drafted and
-            annotated. The subject parcel is identified with lot &amp; block information.</p>
+            annotated. The subject parcel is identified with lot &amp; block information. Adjacent lots are annotated with their lot number (and block number if the lot is in another block).</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Easements</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
-          <p class="mb-1">Add linework for every easement shown on the plat, either through the typical diagram shown on the first page or as shown on the lot itself. Label each easement with its width and purpose. A typical width and description can be used if all sides are the same.</p>
+          <p class="mb-1">Add linework for every easement shown on the plat, either described through the typical diagram shown on the first page of the plat or as shown on the lot itself. Label each easement with its width and purpose. A typical width and description can be used if all sides are the same.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -130,7 +130,7 @@
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p>Each road directly adjacent to the parcel has: the road name (if the road name is
             different from the plat, make the current road name large), plat name (if applicable), and a line containing
-            the width of the right-of-way.</p>
+            the width of the right-of-way. Draw the entire right-of-way centerline from intersection to intersection or intersection to cul-de-sac termination.</p>
         </div>
         <div class="row text-center d-print-none">
           <div class="col-12 col-md-4">
@@ -219,11 +219,13 @@
           </dl>
           <dl class="row">
             <dt class="col-sm-2">Surveyor's Note 6<br>FEMA FIRM</dt>
-            <dd class="col-sm-10">Fill out the community name (unincorporated area are the county name only), panel number, effective date, and the flood zone(s). <a target="_blank" href="https://msc.fema.gov/portal/search">Website</a> <a target="_blank" href="https://hazards-fema.maps.arcgis.com/apps/webappviewer/index.html?id=8b0adb51996444d4879338b5529aa9cd">GIS</a></dd>
+            <dd class="col-sm-10">Fill out the community name (unincorporated area is the county name only), panel number, effective date, and the flood zone(s).<br>
+              <a target="_blank" class="btn btn-success btn-small d-print-none" href="https://msc.fema.gov/portal/search">Website</a>  <a target="_blank" class="btn btn-success btn-small d-print-none" href="https://hazards-fema.maps.arcgis.com/apps/webappviewer/index.html?id=8b0adb51996444d4879338b5529aa9cd">GIS</a></dd>
           </dl>
           <dl class="row">
             <dt class="col-sm-2">Surveyor's Note 9<br>FPRN CORS</dt>
-            <dd class="col-sm-10">Fill with at least <abbr title="Florida Permanent Reference System">FPRN</abbr> <abbr title="Continuously Operating Reference Stations">CORS</abbr> stations.</dd>
+            <dd class="col-sm-10">Fill with at least <abbr title="Florida Permanent Reference System">FPRN</abbr> <abbr title="Continuously Operating Reference Stations">CORS</abbr> stations.<br>
+            <a target="_blank" class="btn btn-success btn-small d-print-none" href="https://www.myfloridagps.com/DMap/">Website</a></dd>
           </dl>
         </div>
       </div>
@@ -265,7 +267,7 @@
             <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
           </div>
           <div class="col-12 col-sm-6 text-center text-sm-end">
-            <a href="../LegalNotice.html">Legal Notices</a>
+            <a href="../../LegalNotice.html">Legal Notices</a>
           </div>
         </div>
       </div>
