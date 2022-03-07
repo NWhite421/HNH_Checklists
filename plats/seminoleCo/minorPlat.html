@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../../hnh_icon_color.png" rel="icon">
+  <script src="../../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Frameworks/Internal/internalScripts.js"></script>
+  <title>Seminole County Rural Plat - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--User Name-->
+          <form class="d-flex">
+            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
+            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
+          </form>
+          <!--Breadcrumb-->
+          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+            <a href="../../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">Plats</a>
+            <li class="breadcrumb-item">Seminole County</a>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Rural Plat</li>
+          </ol>
+          <!--Goto section-->
+          <!--form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 1. Pre-Draw
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item active" href="#">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item" href="Formboard.html">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form-->
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="flex-shrink-0">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+      </symbol>
+      <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+      </symbol>
+      <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </symbol>
+    </svg>
+    <!--Main area-->
+    <div class="container-md">
+      <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+        <div>
+          <strong>Work In Progress Page</strong> This page is a work in progress and is subject to random and frequent changes.
+        </div>
+      </div>
+      <!--div no print - handled in Print header section-->
+      <div class="row justify-content-end align-items-center d-print-none">
+        <div class="col-8 d-none d-md-block">
+          <h3>Seminole County Rural Plat Checklist</h3>
+        </div>
+        <div class="col-12 col-lg-4">
+        </div>
+      </div>
+
+      <div class="col-12 pb-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-between">
+              <div class="col-12 col-md-10" data-bs-toggle="collapse" href="#collapsePA">
+                <h5 class="text-center text-md-start">Pre-Application</h5>
+              </div>
+              <div class="col-12 col-md-2 d-grid">
+                <a class="btn btn-primary btn-sm fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Pre-Application-ADA.pdf">Application</a>
+              </div>
+            </div>
+          </div>
+          <div class="collapse" id="collapsePA">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-sm-2">
+                  <label class="form-check-label pb-2"><input type="checkbox" class="form-check-input"> 1. Application &amp; Fee</label>
+                </div>
+                <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+                  <p>A fully filled and signed application. The application must either be physically signed (all submittals) or be digittally signed and able to be verified by a third-party (digial submittal only).<br><strong>Application Fee:</strong> &#36;50.00 + processing fee<br><small>Application fee subtracted from subsequent plat application fee.</small></p>
+                </div>
+                <hr class="d-none d-sm-block">
+                <div class="col-12 col-sm-2">
+                  <label class="form-check-label pb-2"><input type="checkbox" class="form-check-input"> 2. Detailed Narrative</label>
+                </div>
+                <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+                  <p>A narrative described the proposed development. Should include how access to the property will be given, any easements, and any potential variances.</p>
+                </div>
+                <hr class="d-none d-sm-block">
+                <div class="col-12 col-sm-2">
+                  <label class="form-check-label pb-2"><input type="checkbox" class="form-check-input"> 3. Site Map of Existing Conditions</label>
+                </div>
+                <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+                  <p>A map showing the current conditions of the site and inforamtion about any important sections.</p>
+                </div>
+                <hr class="d-none d-sm-block">
+                <div class="col-12 col-sm-2">
+                  <label class="form-check-label pb-2"><input type="checkbox" class="form-check-input"> 4. Site Sketch of Proposal</label>
+                </div>
+                <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+                  <p>A sketch of the proposed changes to the land. Show existing parcel information and proposed linework and easements. Show and note any access easements to the property.</p>
+                </div>
+                <hr class="d-none d-sm-block">
+                <div class="col-12 pb-2">
+                  Send the completed application packet to Seminole County through one of the following methods:
+                </div>
+                <div class="col-12 col-md-4 pb-2">
+                  <div class="card">
+                    <div class="card-body py-2 text-center">
+                      <h6>E-Mail (Digital Submittal)</h6>
+                      <a href="mailto:plandesk@seminolecountyfl.gov?subject=Pre-Application Submittal">plandesk@seminolecountyfl.gov</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 pb-2">
+                  <div class="card">
+                    <div class="card-body py-2 text-center">
+                      <h6>Mail (Physical Submittal)</h6>
+                      <a href="https://goo.gl/maps/vEwJFoC4gSJX6zAp6" target="_blank">Seminole County Planning &amp; Development Division<br>1101 East First Street<br>Sandford, FL 32771</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 pb-2">
+                  <div class="card">
+                    <div class="card-body py-2 text-center">
+                      <h6>Hand Delivery (Physical Submittal)</h6>
+                      <a href="https://goo.gl/maps/vEwJFoC4gSJX6zAp6" target="_blank">Seminole County Planning &amp; Development Division<br>1101 East First Street<br>Sandford, FL 32771</a>
+                      <p>West Wing, 2nd Floor, Room 2028</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pb-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-between">
+              <div class="col" data-bs-toggle="collapse" href="#collapsePSP">
+                <h5>Preliminary Subdivision Plan</h5>
+              </div>
+              <div class="col-2 d-none d-md-grid">
+                <a class="btn btn-primary btn-sm fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Subdivision-Rural-Application-PacketADA.pdf">Application</a>
+              </div>
+            </div>
+          </div>
+          <div class="collapse" id="collapsePSP">
+            <div class="card-body">
+              test
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pb-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="row justify-content-between">
+              <div class="col" data-bs-toggle="collapse" href="#collapseFP">
+                <h5>Final Plat</h5>
+              </div>
+              <div class="col-2 d-none d-md-grid">
+                <a class="btn btn-primary btn-sm fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Subdivision-Rural-Application-PacketADA.pdf">Application</a>
+              </div>
+            </div>
+          </div>
+          <div class="collapse" id="collapseFP">
+            <div class="card-body">
+              test
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pb-2">
+        <div class="card">
+          <h5 class="card-header" data-bs-toggle="collapse" href="#collapseLink">
+            References &amp; Links
+          </h5>
+          <div class="collapse" id="collapseLink">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <h6>Application Packets</h6>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/departments-services/development-services/planning-development/forms-applications-resources/">Seminole County Forms</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Pre-Application-ADA.pdf">Pre-Application</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Subdivision-Rural-Application-PacketADA.pdf">Rural Subdivision Application</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/core/fileparse.php/3423/urlt/Vacate-Application-Packet-Nov2021.pdf">Petition For Vacate (easement / plat / ROW)</a>
+                </div>
+                <h6>Government Websites</h6>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminolecountyfl.gov/departments-services/development-services/planning-development/">Seminole County Planning &amp; Zoning</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://scpafl.org/">Seminole County Property Appraiser's Office</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://www.seminoleclerk.org/">Seminole County Clerk of Court</a>
+                </div>
+                <div class="col-12 col-md-4 d-grid pb-2">
+                  <a class="btn btn-primary fw-bold" target="_blank" href="https://seminolecounty.tax/">Seminole County Tax Collector</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="alert-warning border border-2 border-warning rounded py-1 px-2">This page contains external links that may or may not be functional. H &amp; H Survey Consultants is not responsible for any missing or broken links</p>
+    </div>
+  </main>
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-end">
+            <a href="../LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>
