@@ -1,0 +1,173 @@
+<!--
+Filename: c:\Projects\HNH_Checklists\calculators\slope.html
+Path: c:\Projects\HNH_Checklists\calculators
+Created Date: Sunday, February 20th 2022, 12:45:37 pm
+Author: Nathan (ThatFloridaMan)
+
+Copyright (c) 2022 Your Company
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../hnh_icon_color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <script src="../Frameworks/Internal/js/calcCommon.js"></script>
+  <script src="../Frameworks/Internal/js/slopeCalc.js"></script>
+  <title>Slope Calculator - H &amp; H Survey Consultants LLC</title>
+
+  
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--Breadcrumb-->
+          <ol class="breadcrumb my-auto text-white d-md-flex">
+            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">Calculators</a>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Slope Calculator</li>
+          </ol>
+          <!--Goto section-->
+          <!--form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 4. Formboard Survey
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item active" href="#">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+
+    <!--Main area-->
+    <div class="container-md">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <form>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  Start Elevation
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="startElevation">
+                <small id="startElevationError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  End Elevation
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="endElevation">
+                <small id="endElevationError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12">
+                <h5 class="pt-2">
+                  2D Distance
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="distance2D" onkeypress="return keyPressToProceed(event)">
+                <small id="distance2DError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch pt-2">
+                  <input class="form-check-input" type="checkbox" id="absoluteCalc">
+                  <label class="form-check-label" for="absoluteCalc">Absolute Slope Calculation <span data-bs-toggle="tooltip" data-bs-placement="right" title="Set to off (left) for a relative slope from start to end. Set to on (right) for an absolute slope.">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                    </svg>
+                  </span></label>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row py-3">
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-primary" value="Calculate" onclick="onPressCalc()">
+              </div>
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-secondary" value="Clear" onclick="clearForm()">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-8 pt-2">
+          <div class="row">
+            <div class="col-6 col-md-8">
+              <h5 class="my-auto">
+                History
+              </h5>
+            </div>
+            <div class="col-6 col-md-4 d-grid">
+              <input type="button" class="btn btn-primary" value="Clear History" onclick="clearHistory()">
+            </div>
+          </div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width: 80px;" class="d-none d-md-table-cell">Time</th>
+                <th>Equation</th>
+                <th style="width: 100px;">Result</th>
+                <th style="width: 50px;">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="resultArea">
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-end">
+            <a href="LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>

@@ -1,0 +1,176 @@
+<!--
+Filename: c:\Projects\HNH_Checklists\calculators\slope.html
+Path: c:\Projects\HNH_Checklists\calculators
+Created Date: Sunday, February 20th 2022, 12:45:37 pm
+Author: Nathan (ThatFloridaMan)
+
+Copyright (c) 2022 Your Company
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../hnh_icon_color.png" rel="icon">
+  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <script src="../Frameworks/Internal/js/calcCommon.js"></script>
+  <script src="../Frameworks/Internal/js/calcProrate.js"></script>
+  <title>Prorate Calculator - H &amp; H Survey Consultants LLC</title>
+
+  
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--Breadcrumb-->
+          <ol class="breadcrumb my-auto text-white d-md-flex">
+            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">Calculators</a>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Prorate Calculator</li>
+          </ol>
+          <!--Goto section-->
+          <!--form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 4. Formboard Survey
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item" href="BoundaryTopo.html">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item active" href="#">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+
+    <!--Main area-->
+    <div class="container-md">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <form>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  Start Elevation
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="startElevation">
+                <small id="startElevationError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  2D Distance
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="distance2D">
+                <small id="distance2DError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  Slope
+                </h5>
+                <div class="input-group">
+                  <input class="form-control" type="number" placeholder="0.00" id="slope" onkeypress="keyPressToProceed(event)">
+                  <span class="input-group-text" id="percentIndicator">%</span>
+                </div>
+                <small id="slopeError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6 text-center">
+                <h5 class="pt-2 text-left">
+                  Prorate Direction
+                </h5>
+                <div class="btn-group" role="group" aria-label="Prorate direction">
+                  <input type="radio" class="btn-check" name="btnDirection" id="dirUp" autocomplete="off" onkeypress="keyPressToProceed(event)"checked>
+                  <label class="btn btn-outline-primary" for="dirUp">Up</label>
+
+                  <input type="radio" class="btn-check" name="btnDirection" id="dirDown" autocomplete="off"  onkeypress="keyPressToProceed(event)">
+                  <label class="btn btn-outline-primary" for="dirDown">Down</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row py-3">
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-primary" value="Calculate" onclick="onPressCalc()">
+              </div>
+              <div class="col-6 d-grid">
+                <input type="button" class="btn btn-secondary" value="Clear" onclick="clearForm()">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-8 pt-2">
+          <div class="row">
+            <div class="col-6 col-md-8">
+              <h5 class="my-auto">
+                History
+              </h5>
+            </div>
+            <div class="col-6 col-md-4 d-grid">
+              <input type="button" class="btn btn-primary" value="Clear History" onclick="clearHistory()">
+            </div>
+          </div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width: 80px;" class="d-none d-md-table-cell">Time</th>
+                <th>Equation</th>
+                <th style="width: 100px;">Result</th>
+                <th style="width: 50px;">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="resultArea">
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-end">
+            <a href="LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>

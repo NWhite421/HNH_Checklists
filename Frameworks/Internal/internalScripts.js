@@ -8,7 +8,10 @@ var readdNoprint = false;
 var pageTitle = "";
 
 function onPageLoad() {
-  checkCookie();
+  var field = document.getElementById("currentUser");
+  if (field != null) {
+    checkCookie();
+  }
 }
 
 function onPagePrint() {
@@ -20,9 +23,19 @@ function onPagePrint() {
 
   //Add job number to text line
   var jobText = document.getElementById("jobInput");
-  var jobPrintArea = document.getElementById("currentJob");
+  var jobPrintArea = document.getElementById("printCurrentJob");
   if (jobText != null && jobText.value !="") {
     jobPrintArea.innerText = jobText.value;
+  }
+  else {
+    jobPrintArea.innerText = "Not Provided";
+  }
+
+  //add name 
+  var name = getCookie("username");
+  var nameArea = document.getElementById("printUserName");
+  if (name != null && name.value !="") {
+    nameArea.innerText = name;
   }
   else {
     jobPrintArea.innerText = "Not Provided";
@@ -32,16 +45,15 @@ function onPagePrint() {
   pageTitle = document.title;
   document.title = jobPrintArea.innerText + " - " + getCookie("username") + " - " + new Date().toDateString();
 
-  //Show comment section if user selects it.
-  var commentArea = document.getElementById("commentSection");
-  var includeCommentArea = document.getElementById("includeCommentSection").checked;
-  if (includeCommentArea && commentArea != null) {
-    readdNoprint = true;
-    commentArea.classList.toggle("d-none");
-    var textEntry = document.getElementById("commentSectionText").value;
-    var commentText = convertTextareaToHTML(textEntry);
-    document.getElementById("commentContent").innerHTML = commentText;
+  var sourceText = document.getElementById("commentSectionText");
+  var printText = document.getElementById("commentContent");
+  var commentText = "<span class='fst-italic'>No comments</span>";
+
+  var textEntry = sourceText.value;
+  if (textEntry.length > 0) {
+    commentText = convertTextareaToHTML(textEntry);
   }
+  printText.innerHTML = commentText;
 };
 
 function onPageCompletePrint() {
@@ -131,5 +143,9 @@ function changeUsername() {
 
 function updateUser(uName) {
   var userField = document.getElementById("currentUser");
+  if (userField == null) {
+    return;
+  }
   userField.innerText = uName;
 }
+
