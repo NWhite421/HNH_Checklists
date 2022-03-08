@@ -1,5 +1,5 @@
 <!--
-Filename: c:\Projects\HNH_Checklists\calculators\inverts.html
+Filename: c:\Projects\HNH_Checklists\calculators\slope.html
 Path: c:\Projects\HNH_Checklists\calculators
 Created Date: Sunday, February 20th 2022, 12:45:37 pm
 Author: Nathan (ThatFloridaMan)
@@ -19,8 +19,10 @@ Copyright (c) 2022 Your Company
   <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
   <script src="../Frameworks/Internal/internalScripts.js"></script>
   <script src="../Frameworks/Internal/js/calcCommon.js"></script>
-  <script src="../Frameworks/Internal/js/invertCalc.js"></script>
-  <title>Invert Calculator - H &amp; H Survey Consultants LLC</title>
+  <script src="../Frameworks/Internal/js/calcProrate.js"></script>
+  <title>Prorate Calculator - H &amp; H Survey Consultants LLC</title>
+
+  
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -41,7 +43,7 @@ Copyright (c) 2022 Your Company
           <ol class="breadcrumb my-auto text-white d-md-flex">
             <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
             <li class="breadcrumb-item">Calculators</a>
-            <li class="breadcrumb-item text-reset active" aria-current="page">Invert Measure Downs</li>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Prorate Calculator</li>
           </ol>
           <!--Goto section-->
           <!--form class="d-flex">
@@ -71,27 +73,51 @@ Copyright (c) 2022 Your Company
       <div class="row">
         <div class="col-12 col-md-4">
           <form>
-            <h5 class="pt-2">
-              Rim Elevation
-            </h5>
-            <input class="form-control" type="number" placeholder="0.00" id="topElevation">
-            <small id="topElevationError" class="text-danger" hidden>Test</small>
-            <h5 class="pt-2">
-              Measure Down Elevation
-            </h5>
-            <input class="form-control" type="number" placeholder="0.00" id="measureElevation" onkeypress="return keyPressToProceed(event)">
-            <small id="measureElevationError" class="text-danger" hidden>Test</small>
-            <h5 class="pt-2">
-              Measure Down Angle
-            </h5>
-            <input class="form-control" type="number" placeholder="0.00" id="measureAngle" onkeypress="return keyPressToProceed(event)">
-            <small id="measureAngleError" class="text-danger" hidden>Test</small>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  Start Elevation
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="startElevation">
+                <small id="startElevationError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  2D Distance
+                </h5>
+                <input class="form-control" type="number" placeholder="0.00" id="distance2D">
+                <small id="distance2DError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5 class="pt-2">
+                  Slope
+                </h5>
+                <div class="input-group">
+                  <input class="form-control" type="number" placeholder="0.00" id="slope" onkeypress="keyPressToProceed(event)">
+                  <span class="input-group-text" id="percentIndicator">%</span>
+                </div>
+                <small id="slopeError" class="text-danger" hidden>Test</small>
+              </div>
+              <div class="col-12 col-md-6 text-center">
+                <h5 class="pt-2 text-left">
+                  Prorate Direction
+                </h5>
+                <div class="btn-group" role="group" aria-label="Prorate direction">
+                  <input type="radio" class="btn-check" name="btnDirection" id="dirUp" autocomplete="off" onkeypress="keyPressToProceed(event)"checked>
+                  <label class="btn btn-outline-primary" for="dirUp">Up</label>
+
+                  <input type="radio" class="btn-check" name="btnDirection" id="dirDown" autocomplete="off"  onkeypress="keyPressToProceed(event)">
+                  <label class="btn btn-outline-primary" for="dirDown">Down</label>
+                </div>
+              </div>
+            </div>
+
             <div class="row py-3">
               <div class="col-6 d-grid">
                 <input type="button" class="btn btn-primary" value="Calculate" onclick="onPressCalc()">
               </div>
               <div class="col-6 d-grid">
-                <input type="button" class="btn btn-secondary" value="Clear" onclick="clearForm(true)">
+                <input type="button" class="btn btn-secondary" value="Clear" onclick="clearForm()">
               </div>
             </div>
           </form>
@@ -117,6 +143,7 @@ Copyright (c) 2022 Your Company
               </tr>
             </thead>
             <tbody id="resultArea">
+      
             </tbody>
           </table>
         </div>
