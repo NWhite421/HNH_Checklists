@@ -17,6 +17,7 @@ Copyright (c) 2022 Your Company
   <link href="../hnh_icon_color.png" rel="icon">
   <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
   <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <script src="../Frameworks/Internal/js/calcCommon.js"></script>
   <script src="../Frameworks/Internal/js/tableSearch.js"></script>
   <title>Point &amp; Chain Codes - H &amp; H Survey Consultants LLC</title>
 </head>
@@ -33,9 +34,24 @@ Copyright (c) 2022 Your Company
   </div>
   <div class="container-md fs-5">
 
-    <div class="row mb-2">
-      <div class="col-12 col-md-3">
-          <input type="text" class="form-control" placeholder="Code" aria-label="Search for a code" id="searchBar" onkeyup="searchTable()">
+    <div class="row mb-2 justify-content-between">
+      <div class="col-12 col-md-3 pb-2">
+          <input type="text" class="form-control" placeholder="Search Term" aria-label="Search for a code" id="searchBar">
+      </div>
+      <div class="col-12 col-md-3 pb-2 text-center text-sm-start d-grid">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary w-100" for="btnradio1">Codes</label>
+        
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary w-100" for="btnradio2">Descriptions</label>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 pb-2 text-center text-sm-start d-grid">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary w-100" onclick="searchTable()">Search</button>
+          <button type="button" class="btn btn-danger w-100" onclick="clearSearch()">Clear</button>
+        </div>
       </div>
     </div>
     <div class="row">
