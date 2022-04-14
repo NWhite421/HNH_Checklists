@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../Frameworks/Internal/internalStyles.css" rel="stylesheet">
-  <link href="../hnh_icon_color.png" rel="icon">
-  <script src="../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
-  <script src="../Frameworks/Internal/internalScripts.js"></script>
+  <link href="../../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../../hnh_icon_color.png" rel="icon">
+  <script src="../../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Frameworks/Internal/internalScripts.js"></script>
   <title>Formboard - General - H &amp; H Survey Consultants LLC</title>
 </head>
 
@@ -17,8 +17,8 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../hnh_icon_color.png" height="32" alt="Company Logo">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../hnh_icon_color.png" height="32" alt="Company Logo">
         </a>
         <!--Toggler button-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -33,7 +33,7 @@
           </form>
           <!--Breadcrumb-->
           <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
-            <a href="../index.html" class="breadcrumb-item text-reset">Home</a>
+            <a href="../../index.html" class="breadcrumb-item text-reset">Home</a>
             <li class="breadcrumb-item">I. General Requirements</a>
             <li class="breadcrumb-item text-reset active" aria-current="page">Part 4. Formboard Survey</li>
           </ol>
@@ -111,14 +111,14 @@
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p>Open the point group "GROUND SHOTS", click on the "EXCLUDE" tab, "check the "INCLUDE POINT NUMBERS WITH" button, and click the "SELECT" button. The dialog will close and allow you to select cogo points. Select all the ground elevations shown during the boundary &amp; topographic portion of the project. This will hide the elevations without deleting them.</p>
-          <p class="alert-warning d-print-none py-0 px-2">If autoCAD warns there you are overriding points, you can select the <strong>Override</strong> option if the data is the same (i.e. control points being reinserted) or <strong>Use Next Available Number</strong> if you thing the data is not the same (i.e. same number, different shots).</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
           <strong>Import Points</strong>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
-          <p>Import your field field (*.txt) into AutoCAD using the <span class="autocad-command">importpoints</span> command with the PNEZD (comma-delinted) format.</p>
+          <p class="mb-0">Import your field field (*.txt) into AutoCAD using the <span class="autocad-command">importpoints</span> command with the PNEZD (comma-delinted) format.</p>
+          <p class="d-print-none"><span class="badge bg-info">Consideration</span> If autoCAD warns there you are overriding points, you can select the <strong>Override</strong> option if the data is the same (i.e. control points being reinserted) or <strong>Use Next Available Number</strong> if you think the data is not the same (i.e. same number, different shots).</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -132,7 +132,7 @@
           <strong>Change Modelspace Scale</strong>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
-          <p>You can easily change the scale of cogo points by changing the scale of the modelspace (lower right corner). The closer to 1" = 1', the smaller the display size</p>
+          <p>You can easily change the scale of cogo points by changing the scale of the modelspace (lower right corner). The closer to 1" = 1', the smaller the display size of your points.</p>
         </div>
       </div>
 
@@ -158,14 +158,14 @@
           <div class="d-none d-print-block">
             <p class="text-muted fst-italic">For a list, see the online checklist.</p>
           </div>
-          <p class="alert-warning px-2">Ensure that no information about property corners, boundary information, or adjacent parcel information has disappeared. If it has, turn the layer back on and adjust the object's layer to be correct.</p>
+          <p><span class="badge bg-info">Consideration</span> Ensure that no information about property corners, boundary information, or adjacent parcel information has disappeared. If it has, turn the layer back on and adjust the object's layer to be correct.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
+          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. If a point exists labelled "FF" or similar, use that point's elevation for the formboard or foundation elevation. Otherwise, average the elevations of the shots for the formboard or survey.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -175,23 +175,12 @@
           <p>Review the location of the house points compared to site plan location (if available). Perform one of the following three (3) actions:</p>
           <dl class="row">
             <dt class="col-sm-3">Points are &lt;0.2' from plan</dt>
-            <dd class="col-sm-9">You can leave the linework in the same location and only adjust the building dimensions and ties.</dd>
+            <dd class="col-sm-9">Adjust the linework of the formboards and associated dimensions to the new field points.</dd>
           </dl>
           <dl class="row">
-            <dt class="col-sm-3">Points are &gt;0.2' from plan or No site plan was completed</dt>
-            <dd class="col-sm-9">Draw the linework, building dimensions, and ties to the point locations.</dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-sm-3">Points are &gt;2.0' from plan</dt>
+            <dt class="col-sm-3">Points are &gt;0.2' from plan</dt>
             <dd class="col-sm-9">Do not adjust any linework or dimensions. Notify a Surveyor of the observation immediately.</dd>
           </dl>
-        </div>
-        <hr class="d-none d-sm-block">
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Label</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Change the text inside the house from "PROPOSED X-STORY RESIDENCE" to "FORMBOARDS" or "FOUNDATION" as required. Change the FFE elevation to the <strong>highest elevation</strong> out of the "bldg" points.</p>
         </div>
       </div>
       
@@ -201,8 +190,8 @@
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Heading</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Set the text directly below the logo to say "FORMBOARD SURVEY" or "FOUNDATION SURVEY" as needed.</p>
-          <p class="alert-info mx-2"><strong>Palm Coast Only</strong> Under the title, add the City of Palm Coast permit number, found at <a class="alert-link" href="https://www.palmcoastgov.com/eplanreview">this site</a>.</p>
+          <p class="mb-0">Set the text directly below the logo to say "FORMBOARD SURVEY" or "FOUNDATION SURVEY" as needed.</p>
+          <p><span class="badge bg-danger">Palm Coast</span> Under the title, add the City of Palm Coast permit number, found at <a href="https://www.palmcoastgov.com/eplanreview">this site</a>. Always put <strong>FOUNDATION SURVEY</strong> regardless of the field data points.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -216,7 +205,7 @@
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Surveyor's Notes</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add a site plan date to Surveyor's notes.</p>
+          <p>Add the field data collection date to Surveyor's notes.</p>
           <dl class="row">
             <dt class="col-sm-2">Surveyor's Note 2</dt>
             <dd class="col-sm-10">Add onto the existing note with "; [FORMBOARD/FOUNDATION] [DATE]"<br>
@@ -257,7 +246,7 @@
     <!--page only section-->
     <div class="container-fluid bg-light py-3 d-print-none mt-2">
       <div class="container">
-        <span class="text-muted">&copy; 2022 - H &amp; H Survey Consutlants LLC</span>
+        <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
       </div>
     </div>
     <!--Print only section-->
