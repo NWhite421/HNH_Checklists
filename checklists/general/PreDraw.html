@@ -102,7 +102,28 @@
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Boundary &amp; Adjacent Information</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Save the Drawing</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p class="mb-1">Save the drawing file into the root directory of the project with one of the following formats:</p>
+        </div>
+        <div class="row text-center pb-2">
+          <div class="col-12 col-md-6">
+            <p class="my-0">Property has a street address:</p>
+            <strong class="my-0">[Job Number] [Street Number] [Street Name].dwg</strong>
+            <p class="text-muted my-0 py-0">22-01-001 18 Sample.dwg</p>
+            <small class="text-muted my-0 py-0">Drop the street suffix (st, rd, dr, etc)</small>
+          </div>
+          <div class="col-12 col-md-6">
+            <p class="my-0">Property does not have a street address:</p>
+            <strong class="my-0">[Job Number] [Street Name] [Lot Number].dwg</strong>
+            <p class="text-muted my-0 py-0">22-01-001 Sample 2.dwg</p>
+            <small class="text-muted my-0 py-0">Drop the street suffix (st, rd, dr, etc)</small>
+          </div>
+        </div>   
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Boundary &amp; Adjacent Information</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p class="mb-1">The boundary, adjacent parcels, and roads are drafted. Each subject parcel segment has
@@ -111,21 +132,21 @@
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Easements</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Easements</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p class="mb-1">Add linework for every easement shown on the plat, either described through the typical diagram shown on the first page of the plat or as shown on the lot itself. Label each easement with its width and purpose. A typical width and description can be used if all sides are the same.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 4. Dimensions</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. Dimensions</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p>Add two (2) dimensions, one from each property corner, to the centerline of the right-of-way. Ensure the accuracy is showing two (2) decimal places.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 5. Road Information</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 6. Road Information</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p>Each road directly adjacent to the parcel has: the road name (if the road name is
@@ -152,7 +173,7 @@
         </div>        
         <hr class="d-none d-sm-block" id="sectiona5">
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 6 . Adjacent Parcel Information</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 7 . Adjacent Parcel Information</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0">
           <p>List the lot number and whether the lot is improved, vacant, or the <abbr title="Finish Floor Elevation">FFE</abbr> of the building (depending on available information).</p>

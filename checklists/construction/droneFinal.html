@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../Frameworks/bootstrap 5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../Frameworks/Internal/internalStyles.css" rel="stylesheet">
+  <link href="../../hnh_icon_color.png" rel="icon">
+  <script src="../../Frameworks/bootstrap 5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Frameworks/Internal/internalScripts.js"></script>
+  <title>Final Drone Checklist - H &amp; H Survey Consultants LLC</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header class="d-print-none">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="--bs-breadcrumb-divider: '>';">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../hnh_icon_color.png" height="32" alt="Company Logo">
+        </a>
+        <!--Toggler button-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!--User Name-->
+          <!-- <form class="d-flex">
+            <h5 class="text-white my-auto pe-2" id="currentUser">Name</h5>
+            <button class="btn btn-outline-success" type="submit" onclick="changeUsername()">Change</button>
+          </form> -->
+          <!--Breadcrumb-->
+          <ol class="breadcrumb mx-auto my-auto text-white d-none d-md-flex">
+            <a href="../../index.html" class="breadcrumb-item text-reset">Home</a>
+            <li class="breadcrumb-item">II. Construction Requirements</a>
+            <li class="breadcrumb-item text-reset" aria-current="page">Drone Processing</li>
+            <li class="breadcrumb-item text-reset active" aria-current="page">Final Drone Checklist</li>
+          </ol>
+          <!--Goto section-->
+          <!-- <form class="d-flex">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Part 2. Boundary &amp; Topo Survey
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="PreDraw.html">Part 1. Pre-Draw</a></li>
+                <li><a class="dropdown-item active" href="#">Part 2. Boundary &amp; Topo Survey</a></li>
+                <li><a class="dropdown-item" href="SitePlan.html">Part 3. Site Plan</a></li>
+                <li><a class="dropdown-item" href="Formboard.html">Part 4. Formboard Survey</a></li>
+                <li><a class="dropdown-item" href="Final.html">Part 5. Final Survey</a></li>
+              </ul>
+            </div>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+
+    <!--Print header-->
+    <div class="container-fluid mx-auto text-center d-none d-print-block">
+      <h3 class="my-0 py-0">Final Drone Processing Checklist</h3>
+      <br>
+      <div class="d-flex justify-content-between my-0 py-0">
+        <p class=" my-0 py-0"><strong>USER: </strong><span id="printUserName"></span></p>
+        <p class=" my-0 py-0"><strong>JOB: </strong><span id="printCurrentJob"></span></p>
+      </div>
+      <hr>
+    </div>
+
+    <!--Main area-->
+    <div class="container-md">
+      <!--div no print - handled in Print header section-->
+      <div class="row justify-content-end align-items-center d-print-none">
+        <div class="col-8 d-none d-md-block">
+          <h3>Final Drone Processing Checklist</h3>
+          <p><span class="badge bg-primary">Pix4Dsurvey Version 1.26</span> <span class="badge bg-secondary">Pix4Dmapper Version 4.8</span></p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <!-- <form>
+            <div class="input-group mb-3">
+              <span class="input-group-text d-block d-xl-none" id="basic-addon1a">Project</span>
+              <span class="input-group-text d-none d-xl-block" id="basic-addon1">Project Number</span>
+              <input type="text" id="jobInput" class="form-control" placeholder="No Project Added"
+                aria-label="Project Number" aria-describedby="basic-addon1">
+            </div>
+          </form> -->
+        </div>
+      </div>
+
+      <!--Preamble Section-->
+      <h5 class="d-print-none">File Management</h5>
+      <div class="row d-print-none">
+        <div class="col-12 col-sm-2">
+          <strong>Link Project Folders</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Create a directory link between the proejct folder on the main drive (Z:\) and the drone server (X:\Drone Projects\). Create a folder on the drone server with the project number. Place the folder from Pix4Dmapper inside the newly created folder.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Create a Pix4Dsurvey Project</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Open Pix4Dsurvey and drag the <strong>.p4d</strong> file in the mapper folder onto the Pix4Dsurvey window to start the import process. The project name will be <strong>Job Number - Job Common Name</strong> (i.e. 19-06-037 - Infotainment). The project location will be <strong>X:\Drone Projects\Job Number</strong> (i.e. X:\Drone Projects\19-06-067). Click <strong>Apply</strong> on the "Define input coordinate reference system" window.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+      </div>
+
+      <!--Section A-->
+      <h5 id="sectionA" class="mb-0">Required Linework Items</h5>
+      <p class="text-muted">Colors are optional guidelines. Layers are required to be followed.</p>
+      <div class="row">
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Edge of pavement</label>
+          <p class="mb-0">Layer: V-HH-ROAD-PAVEMENT</p>
+          <p class="mb-0">Color: #0FF (Cyan)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Edge of driveable concrete</label>
+          <p class="mb-0">Layer: V-HH-ROAD-CONCRETE</p>
+          <p class="mb-0">Color: #00F (Blue)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Back of curbs</label>
+          <p class="mb-0">Layer: V-HH-ROAD-CURB</p>
+          <p class="mb-0">Color: #005353 (Darkish Cyan)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Road Stripes</label>
+          <p class="mb-0">Layer: V-HH-ROAD-STRIPE</p>
+          <p class="mb-0">Color: #FFF (White)</p>
+          <p class="mb-0 text-muted">May use points on straght parking lines and arrows.</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Building footprint(s)</label>
+          <p class="mb-0">Layer: V-HH-BUILDING</p>
+          <p class="mb-0">Color: #FF0 (Yellow)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Edge of non-drivable concrete</label>
+          <p class="mb-0">Layer: V-HH-CONCRETE</p>
+          <p class="mb-0">Color: #00F (Blue)</p>
+          <p class="mb-0 text-muted">Includes sidewalks, concrete walls, and concrete pads.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+      </div>
+
+
+      <h5 id="sectionA" class="mb-0">Required Point Items</h5>
+      <p class="text-muted">Colors are optional guidelines. Layers are required to be followed.</p>
+      <div class="row">
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Light poles</label>
+          <p class="mb-0">Layer: V-HH-LANDMARK</p>
+          <p class="mb-0">Color: #FF4081 (Pink)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Signs</label>
+          <p class="mb-0">Layer: V-HH-LANDMARK</p>
+          <p class="mb-0">Color: #FF4081 (Pink)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Electrical items</label>
+          <p class="mb-0">Layer: V-HH-UTILITIES-ELECTRIC</p>
+          <p class="mb-0">Color: #F00 (Red)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Drainage items</label>
+          <p class="mb-0">Layer: V-HH-UTILITIES-STORM</p>
+          <p class="mb-0">Color: #9BFF9B (Whitish Green)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Sanitary manholes</label>
+          <p class="mb-0">Layer: V-HH-UTILITIES-SANITARY</p>
+          <p class="mb-0">Color: #0F0 (Green)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Concrete bollards</label>
+          <p class="mb-0">Layer: V-HH-CONCRETE</p>
+          <p class="mb-0">Color: #00F (Blue)</p>
+        </div>
+        <div class="col-12 col-sm-6 pb-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> Two shots in dump pad</label>
+          <p class="mb-0">Layer: V-HH-CONCRETE</p>
+          <p class="mb-0">Color: #00F (Blue)</p>
+          <p class="mb-0 text-muted">Put a point in each rear corner of the dump pad to show proper grading out the front.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+      </div>
+
+      <!--page only section-->
+      <div id="pageOnly" class="d-print-none">
+        <div class="row mt-4">
+          <div class="col-12">
+            <form>
+              <h5>Comments</h5>
+              <textarea class="form-control" rows="4" id="commentSectionText"
+                placeholder="Enter your comments here."></textarea>
+            </form>
+          </div>
+          <div class="col-6 col-sm-3 mt-3 d-grid">
+            <button type="button" class="btn btn-success" onclick="uncheckAll()">Clear Form</button>
+          </div>
+          <div class="col-6 col-sm-3 mt-3 d-grid">
+            <button type="button" class="btn btn-success" onclick="window.print()">Print Form</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Print only section-->
+      <div id="PrintOnly" class="d-none d-print-block">
+        <h6>Comments</h6>
+        <p id="commentContent" class="ps-2"></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-end">
+            <a href="../../LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between mt-4">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small >[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
+</body>

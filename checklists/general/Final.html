@@ -59,14 +59,6 @@
   </header>
 
   <main class="flex-shrink-0">
-    <div class="alert alert-warning d-flex align-items-center" role="alert">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-      </svg>
-      <div>
-        <strong>Work In Progress Page</strong> This page is a work in progress and is subject to random and frequent changes.
-      </div>
-    </div>
 
     <!--Print header-->
     <div class="container-fluid mx-auto text-center d-none d-print-block">
@@ -99,44 +91,90 @@
       </div>
 
       <!--Section A-->
-      <h5>SECTION TITLE</h5>
+      <h5 class="d-print-none">P-1. AutoCAD Setup</h5>
+      <div class="row d-print-none"> 
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Open the point group "GROUND SHOTS", click on the "EXCLUDE" tab, "check the "INCLUDE POINT NUMBERS WITH" button, and click the "SELECT" button. The dialog will close and allow you to select cogo points. Select all the ground elevations shown during the boundary &amp; topographic portion of the project. This will hide the elevations without deleting them.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Import Points</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p class="mb-0">Import your field field (*.txt) into AutoCAD using the <span class="autocad-command">importpoints</span> command with the PNEZD (comma-delinted) format.</p>
+          <p class="d-print-none"><span class="badge bg-info">Consideration</span> If autoCAD warns there you are overriding points, you can select the <strong>Override</strong> option if the data is the same (i.e. control points being reinserted) or <strong>Use Next Available Number</strong> if you think the data is not the same (i.e. same number, different shots).</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Update Point Groups</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>Run the <span class="autocad-command">UPDATEALLPOINTGROUPS</span> command to automatically apply styles to applicable points.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <strong>Change Modelspace Scale</strong>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0">
+          <p>You can easily change the scale of cogo points by changing the scale of the modelspace (lower right corner). The closer to 1" = 1', the smaller the display size of your points.</p>
+        </div>
+      </div>
+
+      <h5>A. Modelspace</h5>
       <div class="row">
         <!--Standard Entry.-->
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Draft Hardscape Items</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">DESCRIPTION</p>
-          <p class="alert-warning d-print-none py-0 px-2">NOTICE AREA</p>
-        </div>
-        <hr class="d-none d-sm-block">
-        <!--Entry with seperate information between page and print.-->
-        <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
-        </div>
-        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">DESCRIPTION</p>
+          <p>Draft any new hardscape items such as driveways, sidewalks, an concrete pads.</p>
           <!--Page only section-->
-          <div class="d-print-none mb-3">
-            PAGE ONLY SECTION
-          </div>
-          <!--Print only section-->
-          <div class="d-none d-print-block">
-            <p class="text-muted fst-italic">PRINT ONLY SECTION</p>
-          </div>
         </div>
         <hr class="d-none d-sm-block">
-        <!--Entry with additional information on page and print.-->
         <div class="col-12 col-sm-2">
-          <label class="form-check-label"><input type="checkbox" class="form-check-input"> TITLE</label>
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Draft Utility Items</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p>Add a site plan date to Surveyor's notes.</p>
-          <!--Page and Print section-->
+          <p>Draft newly installed utilities, including the A/C pad, cleanouts, electrical meter, and septic tank cover.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Verify Grades</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p class="mb-0">Verify that the grades and ground elevations provide enough information showing proper water drainage.</p>
+          <p><span class="badge bg-danger">Palm Coast</span> Download the <strong>swale plan</strong> on the Palm Coast Permitting Site <a href="https://www.palmcoastgov.com/eplanreview">link</a>. Verify that the swale is in conformance with the swale plan.</p>
+        </div>
+      </div>
+      <h5 class="mt-1 mt-sm-3">B. Paperspace</h5>
+      <div class="row">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 1. Heading</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p class="mb-0">Set the text directly below the logo to say "FINAL SURVEY".</p>
+          <p><span class="badge bg-danger">Palm Coast</span> Under the title, add the City of Palm Coast permit number, found at <a href="https://www.palmcoastgov.com/eplanreview">this site</a>.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. Inherited Survey Items</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>If this survey was inherited at the formboard / foundation stage, ensure that <a href="PreDraw.html">Part 1. Pre-Draw</a> and <a href="BoundaryTopo.html#sectionA">Part II(A). Boundary Survey</a> items have been fully satisfied.</p>
+        </div>
+        <hr class="d-none d-sm-block">
+        <div class="col-12 col-sm-2">
+          <label class="form-check-label"><input type="checkbox" class="form-check-input"> 3. Surveyor's Notes</label>
+        </div>
+        <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
+          <p>Add the final field data collection date to Surveyor's notes.</p>
           <dl class="row">
             <dt class="col-sm-2">Surveyor's Note 2</dt>
-            <dd class="col-sm-10">Add onto the existing note with "; SITE PLAN [DATE]"<br>
-            <span class="text-muted">Sample: DATE OF FIELD SURVEY: 01/01/2022; SITE PLAN 02/01/2022</span></dd>
+            <dd class="col-sm-10">Add onto the existing note with "; FINAL [DATE]"<br>
+            <span class="text-muted">Sample: DATE OF FIELD SURVEY: 01/01/2022; SITE PLAN 02/01/2022; FORMBOARD 03/01/2022; FINAL 04/01/2022;</span></dd>
           </dl>
         </div>
       </div>

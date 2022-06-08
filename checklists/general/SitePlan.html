@@ -118,10 +118,42 @@
           <label class="form-check-label"><input type="checkbox" class="form-check-input"> 2. House Location</label>
         </div>
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
-          <p class="mb-1">Verify the setbacks for the property. Place the building centered between the left and right
-            property lines and behind the front setback line + 1.00 foot.</p>
-          <p class="alert-warning d-print-none"><strong>Townhomes consideration: </strong> When placing a townhome on multiple
-            lots, also verify that the seperation walls fall on the property line.</p>
+          <p class="mb-0">Verify the setbacks for the property. Place the building centered between the left and right property lines and behind the front setback line + 1.00 foot.</p>
+          <p class="d-print-none"><span class="badge bg-info">Consideration</span> When placing a townhome on multiple lots, also verify that the seperation walls fall on the property line.</p>
+          <table class="table table-sm table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 40%;"></th>
+                <th scope="col">Front</th>
+                <th scope="col">Side</th>
+                <th scope="col">Rear</th>
+                <th scope="col">Side (R/W)</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">City of Palm Coast</th>
+                <td>25.0'</td>
+                <td>7.5'</td>
+                <td>20.0'</td>
+                <td>25.0'</td>
+              </tr>
+              <tr>
+                <th scope="row">City of Palm Bay</th>
+                <td>25.0'</td>
+                <td>8.0'</td>
+                <td>25.0'</td>
+                <td>25.0'</td>
+              </tr>
+              <tr>
+                <th scope="row">City of Deltona</th>
+                <td>25.0'</td>
+                <td>7.5'</td>
+                <td>25.0'</td>
+                <td>15.0'</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -150,6 +182,8 @@
         <div class="col-11 offset-1 col-sm-10 offset-sm-0 d-sm-block d-print-block">
           <p>Unless otherwise specified, the <abbr title="Finish Floor Elevation">FFE</abbr> for the proposed house is
             1.50' above the crown of the road at the middle of the lot.</p>
+            <p class="mb-1"><span class="badge bg-danger">Palm Bay</span> Do not post the FFE until <strong>after we receive the septic plan</strong>.</p>
+            <p><span class="badge bg-danger">Palm Coast</span> See the <strong>Sample Grading Points</strong> PDF under B2 to determine the FFE.</p>
         </div>
         <hr class="d-none d-sm-block">
         <div class="col-12 col-sm-2">
@@ -171,6 +205,25 @@
               <li><span class="badge bg-secondary">Secondary Consideration</span> Allowed drainages (Type-A, Type-B,
                 Type-C).</li>
             </ul>
+            <p class="mb-1"><span class="badge bg-danger">Palm Bay</span> Grades are provided by the septic engineer. Do not post proposed grades until a septic plan is received.</p>
+            <p><span class="badge bg-danger">Palm Coast</span> Follow the example provided below for determining grades.</p>
+            <div class="col-12 mb-3">
+              <div class="accordion" id="accordianGradeSample">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingPalmCoastSample">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePalmCoastSample" aria-expanded="false" aria-controls="collapsePalmCoastSample">
+                          Palm Coast Sample Grading Points
+                        </button>
+                      </h2>
+                      <div id="collapsePalmCoastSample" class="accordion-collapse collapse pb-3" aria-labelledby="headingPalmCoastSample" data-bs-parent="#accordianGradeSample">
+                        <div class="accordion-body" style="height: 800px;">
+                          <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palmCoast/Sample Elevations.pdf">
+                          <a href="../../resources/palmCoast/Sample Elevations.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
           </div>
           <div class="d-none d-print-block">
             <p class="text-muted fst-italic">For the list of considerations, please view the online checklist.</p>
@@ -217,6 +270,39 @@
       </div>
 
       <!--page only section-->
+      <div class="row pb-3 d-print-none">
+        <h5>Sample Site Plans</h5>
+        <div class="col-12 mb-3">
+            <div class="accordion" id="accordionSitePlans">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingPalmBay">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePalmBay" aria-expanded="false" aria-controls="collapsePalmBay">
+                        Palm Bay Site Plan (Before Septic Plan)
+                      </button>
+                    </h2>
+                    <div id="collapsePalmBay" class="accordion-collapse collapse pb-3" aria-labelledby="headingPalmBay" data-bs-parent="#accordionSitePlans">
+                      <div class="accordion-body" style="height: 800px;">
+                        <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palm bay/21-01-065-3290 FORESMAN-SP.pdf">
+                        <a href="../../resources/palm bay/21-01-065-3290 FORESMAN-SP.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingPalmCoast">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePalmCoast" aria-expanded="false" aria-controls="collapsePalmCoast">
+                        Palm Coast Site Plan
+                      </button>
+                    </h2>
+                    <div id="collapsePalmCoast" class="accordion-collapse collapse pb-3" aria-labelledby="headingPalmCoast" data-bs-parent="#accordionSitePlans">
+                      <div class="accordion-body" style="height: 800px;">
+                        <embed type="application/pdf" class="w-100 h-100 pb-2" src="../../resources/palmCoast/Site Plan Example.pdf">
+                        <a href="../../resources/palmCoast/Site Plan Example.pdf" target="_blank">Having issues, view PDF in a new tab.</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
       <div id="pageOnly" class="d-print-none">
         <div class="row mt-4">
           <div class="col-12">
