@@ -4,13 +4,13 @@ window.addEventListener("afterprint", onPageCompletePrint);
 window.addEventListener("load", onPageLoad);
 
 //internal properties
-var readdNoprint = false;
+var readNoPrint = false;
 var pageTitle = "";
 
 function onPageLoad() {
   var field = document.getElementById("currentUser");
   if (field != null) {
-    checkCookie();
+    checkUsernameCookie();
   }
 }
 
@@ -58,8 +58,8 @@ function onPagePrint() {
 
 function onPageCompletePrint() {
   var commentArea = document.getElementById("commentSection");
-  if (readdNoprint) {
-    readdNoprint = false;
+  if (readNoPrint) {
+    readNoPrint = false;
     commentArea.classList.toggle("d-none");
   }
 
@@ -120,7 +120,7 @@ function getCookie(cname) {
 
 //Credit: W3Schools
 //Modified by nwhite
-function checkCookie() {
+function checkUsernameCookie() {
   let user = getCookie("username");
   if (user != "") {
     console.log("Welcome again " + user);
