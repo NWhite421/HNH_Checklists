@@ -8,10 +8,64 @@ var readNoPrint = false;
 var pageTitle = "";
 
 function onPageLoad() {
-  var field = document.getElementById("currentUser");
-  if (field != null) {
-    checkUsernameCookie();
+  verifyParams();
+  verifySettings();
+  updateUser();
+}
+
+function verifyParams() {
+  var queryString = window.location.search;
+
+  // var urlParams = new URLSearchParams(queryString);
+  // if (urlParams.has('preview')){
+  //   if (urlParams.get('preview') == 'true') {
+  //     document.getElementById("text").innerHTML = "The window is in Preview Mode";
+  //   }
+  // }
+}
+
+function verifySettings() {
+  var settingModal = document.getElementById("modalSettings");
+  settingModal.addEventListener('show.bs.modal', modalShown);
+
+  
+  var user = getCookie("username");
+  if (user == "") {
+    changeUsername();
   }
+}
+
+
+function modalShown() {
+  let user = getCookie("username");
+  if (user != "") {
+    setCookie("username", user, 365); //refresh the experation date of the cookie.
+    document.getElementById("txtName").value = getCookie("username");
+  } else {
+  }
+
+  var color = getCookie("colorMode");
+  if (color != "") {
+    document.getElementById("setting.color." + color).checked = true;
+  }
+  else 
+  {
+    document.getElementById("setting.color.system").checked = true;
+  }
+  // if (color != null){
+  //   switch (color){
+  //     case "light":
+  //       document.getElementById("setting.color.light").checked = true;
+  //       break;
+  //     case "dark":
+  //       document.getElementById("setting.color.dark").checked = true;
+  //       break;
+  //     case "system":
+  //     default:
+  //       document.getElementById("setting.color.system").checked = true;
+  //       break;
+  //   }
+  // }
 }
 
 function onPagePrint() {
@@ -99,7 +153,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
 }
 
 //Credit: W3Schools
@@ -132,20 +186,52 @@ function checkUsernameCookie() {
 }
 
 function changeUsername() {
-  let user = getCookie("username");
-  user = prompt("Please enter your first and last name:", user);
-  if (user != "" && user != null) {
-    setCookie("username", user, 365);
-    updateUser(user);
-  }
-  return false;
+  console.log("calling settings modal");
+  var settingModal = new bootstrap.Modal(document.getElementById('modalSettings'), {
+    keyboard: false,
+    backdrop: 'static'
+  });
+  document.getElementById('dismiss-modal').classList.add("visually-hidden")
+  settingModal.show();
 }
 
-function updateUser(uName) {
+function saveSettings() {
+  var userName = document.getElementById("txtName").value;
+  if (userName == "") {
+    window.alert("Please enter a name");
+    return;
+  }
+  setCookie("username", userName, 365);
+  
+  column = getRadioGroupValue("btnGroup.settings.color").split('.');
+  let columnValue = (column.length < 3) ? "system" : column[2];
+  setCookie("colorMode", columnValue, 365);
+
+  var myModalEl = document.getElementById('modalSettings');
+  var settingModal = bootstrap.Modal.getInstance(myModalEl);
+  settingModal.hide();
+  if (document.getElementById('dismiss-modal').classList.contains('visually-hidden')){
+    document.getElementById('dismiss-modal').classList.remove('visually-hidden');
+  }
+  updateUser();
+}
+
+function updateUser() {
+  var username = getCookie("username");
   var userField = document.getElementById("currentUser");
   if (userField == null) {
     return;
   }
-  userField.innerText = uName;
+  userField.innerText = username;
 }
 
+function getRadioGroupValue(name) {
+  var radio = document.querySelector('input[name=\"' + name + '\"]:checked').id;
+  
+  if (radio == null) {
+    console.error("Radio group [" + name + "] is not a valid radio group.");
+    return false;
+  }
+
+  return radio;
+}

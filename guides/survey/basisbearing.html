@@ -199,16 +199,62 @@ Copyright (c) 2022 Your Company
       </div>
     </div>
   </div>
+  
+  <footer class="footer mt-auto">
+    <!--page only section-->
+    <div class="container-fluid bg-light py-3 d-print-none mt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-4 text-center text-sm-start">
+            <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+          </div>
+          <div class="col-12 col-sm-4 text-center">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalSettings">Settings</a>
+          </div>
+          <div class="col-12 col-sm-4 text-center text-sm-end">
+            <a href="LegalNotice.html">Legal Notices</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Print only section-->
+    <div class="container-fluid text-center d-none d-print-flex justify-content-between">
+      <small id="timestamp" class="my-0 py-0">Timestamp goes here.</small>
+      <small>[END OF DOCUMENT]</small>
+      <small class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</small>
+    </div>
+  </footer>
 </body>
 
-<div class="mt-auto pt-1 d-none d-print-block">
-  <p id="timestamp" class="my-0 py-0">Timestamp goes here.</p>
-  <span class="my-0 py-0">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
-</div>
-<footer class="footer mt-auto py-3 bg-light d-print-none">
-  <div class="container">
-    <span class="text-muted">&copy; 2022 - H &amp; H Survey Consultants LLC</span>
+<!-- Modal -->
+<div class="modal fade" id="modalSettings" tabindex="-1" data-bs-backdrop="static" aria-labelledby="modalSettingsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalSettingsLabel">Website Settings</h5>
+              
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label for="txtName" class="form-label">Name<span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="txtName" placeholder="John Doe">
+              </div>
+              <div class="btn-group w-100" id="color-mode" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnGroup.settings.color" id="setting.color.light" autocomplete="off" disabled>
+                  <label class="btn btn-outline-primary w-100" for="setting.color.light">Light Theme</label>
+              
+                  <input type="radio" class="btn-check" name="btnGroup.settings.color" id="setting.color.dark" autocomplete="off" disabled>
+                  <label class="btn btn-outline-primary w-100" for="setting.color.dark">Dark Theme</label>
+              
+                  <input type="radio" class="btn-check" name="btnGroup.settings.color" id="setting.color.system" autocomplete="off" disabled>
+                  <label class="btn btn-outline-primary w-100" for="setting.color.system">System Default</label>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="dismiss-modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="saveSettings()">Save changes</button>
+          </div>
+      </div>
   </div>
-</footer>
-
+</div>
 </html>
