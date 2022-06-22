@@ -86,17 +86,6 @@ function getCheckboxValue(element) {
   return elementObj.checked;
 }
 
-function getRadioGroupValue(name) {
-  var radio = document.querySelector('input[name=\"' + name + '\"]:checked').id;
-  
-  if (radio == null) {
-    console.error("Radio group [" + name + "] is not a valid radio group.");
-    return false;
-  }
-
-  return radio;
-}
-
 function deleteRow(id) {
   console.log(id);
   var p=id.parentNode.parentNode;
