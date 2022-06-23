@@ -32,7 +32,7 @@
 
 @media print {
     .form-check-label {
-        font-weight: 0;
+        font-weight: normal;
     }
 
     hr {
