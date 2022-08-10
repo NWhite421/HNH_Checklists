@@ -41,16 +41,58 @@ Copyright (c) 2022 Your Company
 </header-->
 
 <body>
-      <div style="position: fixed; top: 10px; right: 10px;">
+      <div style="position: fixed; top: 10px; right: 10px;" class="d-print-none">
         <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
           <i class="bi bi-layout-sidebar"></i>
         </a>
       </div>
-  <div class="container min-vh-100">
-    <h1 class="text-center">Drafting Standards</h1>
+  <div class="container min-vh-100" data-bs-spy="scroll" data-bs-target="#scrollspy" data-bs-offset="0">
+    <h1 class="text-center" id="title">Drafting Standards</h1>
 
-    <h3>Text</h3>
-    
+    <h3 id="text">Text</h3>
+    <p>In professional drafting, there are two factors when it comes to text. Font family and font size. For the font family, the majority of text is <u>simplex</u>. Other fonts that are used in specific scenarios include <u>RomanC</u> and <u>calibri</u>. For font sizes, we go off the <i>Leroy Sizing Convention</i> or the L-system. The L-system specifies the text size in decimal feet and is easily scalable based on your drawing's scale. The L-system works as such.</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">L-Number</th>
+          <th scope="col">Paper Print Size</th>
+          <th scope="col">L-Number</th>
+          <th scope="col">Paper Print Size</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>L60</td>
+        <td>0.060'</td>
+        <td>L125</td>
+        <td>0.125'</td>
+      </tr>
+      <tr>
+        <td>L80</td>
+        <td>0.080'</td>
+        <td>L200</td>
+        <td>0.200'</td>
+      </tr>
+      <tr>
+        <td>L100</td>
+        <td>0.100'</td>
+        <td>L240</td>
+        <td>0.240'</td>
+      </tr>
+      <tr>
+        <td>L120</td>
+        <td>0.120'</td>
+        <td>L500</td>
+        <td>0.500'</td>
+      </tr>
+    </table>
+    <h4 id="autocadimplementation">AutoCAD Implementation</h4>
+    <p>There are two ways to implement the L-system into AutoCAD; manually or using <u>Annotative</u> text. Both have their positives and negatives and should be considered for the project.</p>
+    <h5 id="manualsizing">Manual Text Scaling</h5>
+    <p>Manual scaling required that the CAD technician calculates the &quot;real-world&quot; scale of text based on the scale of the drawing they are annotating. To get the scaled size of text, you multiply the L-number paper print size by the scale your drawing is at. For instance, if I want to insert a text at L80 size in a 1&quot; = 20' drawing, you would multiply 0.080 &times; 20 to get to a text size of 1.600'.</p>
+    <p class="mb-0"><b><i>Paper Print Size &times; Drawing Scale = Text Size</i></b></p>
+    <p><i>[L120] <b>0.120'</b> &times; [1&quot; = 40'] <b>40'</b> = <b>4.800'</b></i></p>
+    <h5 id="annotativesizing">Annotative Text Setting</h5>
+    <p>AutoCAD has a feature where it will calculate the paper print size based on the <u>active scale</u> of the drawing, or the scale the drawing is currently set at. The text style itself has to be setup to allow this functionality. It does have additional functionality where it will hide the text if the viewport's scale or printing scale does not match the text's established scale. It also allows the same text object to be at different sizes in different locations with the content syncing between all scales.</p>
   </div>
   
   
@@ -88,78 +130,11 @@ Copyright (c) 2022 Your Company
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+    <div id="scrollspy" class="list-group">
+      <a class="list-group-item list-group-item-action ps-2" href="#title">Drafting Standards</a>
+      <a class="list-group-item list-group-item-action ps-2" href="#text">Text</a>
+      <a class="list-group-item list-group-item-action ps-4" href="#manualsizing">Manual Sizing</a>
+      <a class="list-group-item list-group-item-action ps-4" href="#annotativesizing">Annotative Sizing</a>
     </div>
   </div>
 </div>
